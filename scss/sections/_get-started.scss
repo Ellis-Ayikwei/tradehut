@@ -1,0 +1,130 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+
+.get-started {
+    padding: 3rem 0;
+    background-color: $gray-200;
+
+    .carousel {
+        position: relative;
+        height: 80%;
+
+        @include media-breakpoint-down(md) {
+            font-size: small;
+
+
+            .btn {
+                font-size: 0.8rem;
+                margin-bottom: -0.8rem;
+            }
+        }
+    }
+
+    .cta-info {
+        padding: 3rem;
+        margin: 2rem 0;
+
+
+        &__list {
+            position: relative;
+            list-style-type: none;
+            display: block;
+            padding-top: 0.5rem;
+            padding-left: 0.5rem;
+            margin-bottom: 0.7rem;
+
+            li::before {
+                font-family: "Font Awesome 5 Free";
+                content: "\f00c";
+                font-weight: 600;
+                margin-right: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    // FORM CONTENT
+    .form {
+        padding: 30rem;
+
+        .form-label {
+            color: $black;
+        }
+
+        button {
+            border: none;
+            color: $white;
+            text-transform: capitalize;
+
+            a {
+                color: $black;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+        }
+    }
+    /* #myCarousel {
+        height: 80% !important;
+        width: auto;
+        object-fit: cover;
+
+        @include media-breakpoint-down(md) {
+            height: 100%;
+        }
+    }
+
+    .carousel-item {
+        height: 80%;
+    }*/
+    .carousel {
+        height: 400px;
+        max-width: 1000px;
+
+        @include media-breakpoint-up(md){
+        margin-right: 15%;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        margin-left: 15%;
+        }
+
+        img {
+            max-height: 400px;
+            max-width: 1000px;
+            place-items: center;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .carousel {
+            max-sheight: 1000px;
+            max-width: 1000px;
+
+
+            .carousel-indicators {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                margin-right: 15%;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                margin-left: 15%;
+            }
+
+            img {
+                min-height: 400px;
+                max-height: 1000px;
+                max-width: 1000px;
+                place-items: center;
+            }
+        }
+    }
+}
+
+
+
