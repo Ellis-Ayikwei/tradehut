@@ -1,66 +1,77 @@
-
-@use'../custom' as *;
-@use'../components/mixins' as *;
+@use "../custom" as *;
+@use "../components/mixins" as *;
 
 .menu {
-    background-color: white;
-    opacity: 95%;
+	position: fixed;
+	.container-fluid {
+		justify-content: end;
+	}
+	li {
+		padding: 0 0.7rem;
+		color: $black !important;
 
+		@include media-breakpoint-down(md) {
+			font-size: small;
+			position: relative;
+		}
 
+		&:hover {
+			background-color: $primary;
+			color: $black !important;
+			border-radius: 5rem;
+		}
 
-    li {
-        padding: 0 0.7rem;
-        color: $black !important;
+		a {
+			color: $black !important;
+			text-transform: capitalize;
+			font-weight: 600;
+		}
+	}
 
-        @include media-breakpoint-down(md) {
-            font-size: small;
-            position: relative;
-        }
+	.btn-rounded {
+		margin: 0;
+		position: relative;
+		display: inline-block;
+		padding: 0.1rem 1rem 0.1rem 1rem;
+		font-weight: 700;
+		margin: 0;
+		border: 5px solid $primary;
+		background-color: none;
+		width: fit-content;
+	}
 
+	.navbar-nav {
+		@include media-breakpoint-down(md) {
+			padding: 0.2rem;
+			display: block;
+			overflow-y: scroll;
+			height: 120px;
+		}
 
-        &:hover {
-            background-color: $primary;
-            color: $black !important;
-            border-radius: 5rem;
-        }
+		.container {
+			@include media-breakpoint-down(md) {
+				font-size: small;
+				padding: 0.2rem;
+				display: block;
+				max-height: auto;
+				overflow-y: scroll;
+				height: 100px;
+			}
+		}
+	}
 
-        a {
-            color: $black !important;
-            text-transform: capitalize;
-            font-weight: 600;
-        }
+	.navbar-brand {
+		margin: 0 !important;
+		padding: 0;
+	}
+	.dropdown-menu {
+		opacity: 100;
+		background-blend-mode: color !important;
 
-        .btn-rounded{
-            margin-top:0;
-        }
-    }
-
-    .navbar-toggler {
-        background-color: $primary;
-    }
-
-    .navbar-toggler-icon {
-        background-color: transparent;
-    }
+		.dropdown-item {
+			&:hover {
+				background-color: transparent !important;
+			}
+		}
+	}
 }
-
-.navbar-nav {
-    @include media-breakpoint-down(md) {
-      
-        padding: 0.2rem;
-        display: block;
-        overflow-y: scroll;
-        height:120px;
-    }
-
-    .container {
-        @include media-breakpoint-down(md) {
-            font-size: small;
-            padding: 0.2rem;
-            display: block;
-            max-height: auto;
-            overflow-y: scroll;
-            height: 100px;
-        }
-        }
-    }
