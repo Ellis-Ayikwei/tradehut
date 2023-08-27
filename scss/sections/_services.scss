@@ -1,0 +1,112 @@
+@use'../custom' as *;
+
+.services {
+    position: relative;
+    padding: 1rem 0;
+
+    &__content {
+        padding: 1rem;
+        marging-top: 5rem;
+
+        &__pic {
+            margin-left: 0;
+            padding: 0;
+        }
+
+        p {
+            font-size: 0.8rem;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 1rem;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            color: $primary;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .border-left {
+        border-left: double;
+        border-color: $primary;
+
+
+        @include media-breakpoint-down(md) {
+            border: hidden;
+            font-weight:500;
+        }
+    }
+
+    li {
+        position: relative;
+        list-style-type: none;
+        display: block;
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+        margin-bottom: 0.7rem
+    }
+
+    li::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f7d9";
+        font-weight: 600;
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+        color: $primary;
+    }
+
+
+    &__pic {
+        max-width: 100%;
+    }
+
+    .store {
+        li::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f54e";
+            font-weight: 600;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    .webdev {
+        li::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f121";
+            font-weight: 600;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    .rephut {
+        li::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f7d9";
+            font-weight: 600;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+    }
+
+
+    .profit {
+        li::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f590";
+            font-weight: 600;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+    }
+}
