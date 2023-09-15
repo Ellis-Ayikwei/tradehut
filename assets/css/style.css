@@ -12106,7 +12106,7 @@ textarea.form-control-lg {
 }
 .Topsellers-card .card {
   width: 20vw;
-  margin: 2rem;
+  margin: auto;
   padding: 10px;
 }
 .Topsellers-card .card .card-header {
@@ -12119,10 +12119,12 @@ textarea.form-control-lg {
     font-size: 10px;
   }
 }
-.Topsellers-card .card .card-header .text-left,
-.Topsellers-card .card .card-header .text-right {
+.Topsellers-card .card .card-header .text-left {
   padding: 0;
   text-align: center;
+}
+.Topsellers-card .card .card-header .text-right {
+  text-align: end;
 }
 .Topsellers-card .card {
   /* Add shadows to create the "card" effect */
@@ -12158,13 +12160,19 @@ textarea.form-control-lg {
   width: 150px;
   margin: auto;
 }
+@media (max-width: 575.98px) {
+  .Topsellers-card img {
+    width: 30px;
+    margin: auto;
+  }
+}
 .Topsellers-card .btn:hover {
   background-color: #f19428 !important;
   border-radius: 20px;
 }
 
 .TopSellers {
-  width: 60vw !important;
+  width: 65vw !important;
 }
 @media (min-width: 768px) {
   .TopSellers {

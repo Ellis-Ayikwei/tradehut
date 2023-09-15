@@ -67,7 +67,7 @@
 	flex-wrap: nowrap !important;
 	.card {
 		width: 20vw;
-		margin: 2rem;
+		margin: auto;
 		padding: 10px;
 		.card-header {
 			font-size: 15px;
@@ -76,10 +76,13 @@
 			@include media-breakpoint-down(md) {
 				font-size: 10px;
 			}
-			.text-left,
-			.text-right {
+			.text-left {
 				padding: 0;
 				text-align: center;
+			}
+
+			.text-right {
+				text-align: end;
 			}
 		}
 	}
@@ -122,6 +125,10 @@
 	img {
 		width: 150px;
 		margin: auto;
+		@include media-breakpoint-down(sm) {
+			width: 30px;
+			margin: auto;
+		}
 	}
 
 	.btn:hover {
@@ -131,10 +138,13 @@
 }
 
 .TopSellers {
-	width: 60vw !important;
+	width: 65vw !important;
 	@include media-breakpoint-up(md) {
 		width: 70vw !important;
 	}
+	// @include media-breakpoint-down(sm) {
+	// 	width: 70vw !important;
+	// }
 }
 .Toprated {
 	width: 25vw !important;
