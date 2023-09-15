@@ -12159,8 +12159,8 @@ textarea.form-control-lg {
   margin: auto;
 }
 .Topsellers-card .btn:hover {
-  background-color: aqua !important;
-  border-radius: 20%;
+  background-color: #f19428 !important;
+  border-radius: 20px;
 }
 
 .TopSellers {
