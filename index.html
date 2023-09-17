@@ -1375,7 +1375,7 @@
 											</div>
 																				
 																																						
-										</div>
+						</div>
 				
 						<div class="row m-0 flex-nowrap">
 							<div class="col-md-9 col-lg-8 col-sm-5 me-4 Promo">
@@ -1942,6 +1942,42 @@ $(document).ready(function(){
   
 	
 </script>
+
+
+
+<script>
+	function showCardsBasedOnScreenSize() {
+		alert('Function called');
+		const screenWidth = window.innerWidth;
+	  
+		// Define the breakpoint for smaller screens (e.g., 768 pixels)
+		const breakpoint = 768;
+	  
+		// Select all cards
+		const cards = document.querySelectorAll('.items-category-card .card');
+	  
+		// Hide all cards
+		cards.forEach(card => {
+		  card.style.display = 'none';
+		});
+	  
+		if (screenWidth <= breakpoint) {
+		  // Show only the first two cards on smaller screens
+		  for (let i = 0; i < 2; i++) {
+			cards[i].style.display = 'block';
+		  }
+		} else {
+		  // Show all cards on larger screens
+		  cards.forEach(card => {
+			card.style.display = 'block';
+		  });
+		}
+	  }
+	  
+	  // Run the function initially and whenever the window is resized
+	  window.addEventListener('load', showCardsBasedOnScreenSize());
+	  window.addEventListener('resize', showCardsBasedOnScreenSize());
+  </script>
 
 		<!-- Wrapper End-->
 		<!-- offcanvas start -->
