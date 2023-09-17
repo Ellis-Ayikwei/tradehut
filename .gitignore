@@ -1,3 +1,4 @@
 node_modules/*
 .idea/
-functions/
+functions
+node_modules

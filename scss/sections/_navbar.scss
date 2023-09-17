@@ -118,3 +118,48 @@
 .expandright:focus {
 	padding: 0 0 0 16px;
 }
+
+// aside
+
+.mySidepanel,
+.sidebar {
+	/* Specify a height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 20;
+	left: 0;
+	/* Black*/
+	margin-top: 57px;
+	/* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: transparent;
+	color: rgb(255, 147, 6);
+	padding: 10px 15px;
+	border: none;
+	@include media-breakpoint-down(sm) {
+		p {
+			display: none;
+		}
+		i {
+			margin-right: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.openbtn:hover {
+	background-color: #444;
+}

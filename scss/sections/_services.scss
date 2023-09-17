@@ -1,7 +1,9 @@
 @use "../custom" as *;
+@use "../components/mixins" as *;
 
 .content-inner {
 	flex-wrap: nowrap !important;
+
 	aside {
 		width: 30%;
 		padding-left: 15px;
@@ -62,17 +64,45 @@
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	}
 }
-.Topsellers-card {
+.promo-card {
 	justify-content: center;
 	flex-wrap: nowrap !important;
+	overflow-x: auto;
+
 	.card {
-		width: 20vw;
+		width: 300px;
 		margin: auto;
 		padding: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		transition: 0.3s;
+		margin: 0 auto;
+		float: none;
+		margin-bottom: 10px;
+
+		justify-content: center !important;
+		@include media-breakpoint-down(md) {
+			margin-right: 10%;
+		}
+		.alert {
+			position: absolute;
+			top: 50%;
+			width: auto;
+			transform: translate(-50%, 0%);
+			font-size: 12px;
+
+			border-radius: 5px;
+			border: none;
+		}
+
+		.alert-info {
+			background-color: #ffd900; /* Green background color */
+			color: rgb(0, 0, 0);
+		}
 		.card-header {
 			font-size: 15px;
 			flex-wrap: nowrap;
 			padding: 0;
+
 			@include media-breakpoint-down(md) {
 				font-size: 10px;
 			}
@@ -85,19 +115,19 @@
 				text-align: end;
 			}
 		}
-
-		.card-body{
-			
+		.card-body {
+			margin-top: 5%;
 		}
-	}
-
-	.card {
-		/* Add shadows to create the "card" effect */
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		transition: 0.3s;
-		margin: 0 auto;
-		float: none;
-		margin-bottom: 10px;
+		.wish-icon {
+			color: #ff6721;
+		}
+		color: black;
+		li {
+			color: $primary;
+		}
+		s {
+			color: #5f5f5f;
+		}
 	}
 
 	/* On mouse-over, add a deeper shadow */
@@ -106,17 +136,14 @@
 	}
 
 	@include media-breakpoint-down(sm) {
-		h5 {
-			font-size: 12px;
-		}
 		.list-inline {
 			font-size: 5px;
 			li {
 				margin: 0;
 			}
 		}
-
-		strike,
+		p,
+		s,
 		b {
 			font-size: 8px !important;
 		}
@@ -126,32 +153,87 @@
 		}
 	}
 
+	h5 {
+		font-weight: bold !important;
+		font-family: "Montserrat";
+	}
+	.card-img-top {
+		box-shadow: rgba(153, 153, 153, 0.35) 0px 5px 15px;
+		background-color: #ebebeb60;
+		border-radius: 10%;
+		width: 70%;
+		height: 70%;
+		margin: auto;
+		justify-content: center;
+		align-content: center;
+		position: relative;
+		padding: 5px;
+	}
 	img {
 		width: 150px;
-		margin: auto;
+		position: inherit;
 		@include media-breakpoint-down(sm) {
-			width: 30px;
+			width: 70px;
 			margin: auto;
 		}
 	}
-
+	.btn {
+		padding: 5px 20px;
+		border-radius: 20px;
+		background-color: transparent !important;
+		color: #5f5f5f !important;
+		border: none !important;
+		width: auto;
+	}
 	.btn:hover {
 		background-color: $primary !important;
 		border-radius: 20px;
+		color: white !important;
+	}
+	.addtocart {
+		background-color: rgb(48, 48, 48) !important;
+		color: white !important;
+		font-size: 16px;
+		padding: 5px 55px 5px 55px;
+
+		@include media-breakpoint-down(sm) {
+			font-size: 2vw;
+		}
 	}
 }
 
-.TopSellers {
-	width: 65vw !important;
+.promo {
+	width: 100vw !important;
+	margin-right: auto;
 	@include media-breakpoint-up(md) {
 		width: 70vw !important;
 	}
 	// @include media-breakpoint-down(sm) {
 	// 	width: 70vw !important;
 	// }
+
+	.alert {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 12px;
+		padding: 5px;
+		border-radius: 5px;
+		border: none;
+	}
+
+	.alert-info {
+		background-color: #9dff90; /* Green background color */
+		color: rgb(0, 0, 0);
+		font-weight: bold;
+	}
 }
 .Toprated {
-	width: 25vw !important;
+	width: 30vw !important;
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
 	.card-body {
 		@include media-breakpoint-down(sm) {
 			padding: 0;
@@ -183,3 +265,5 @@
 .heart-icon[data-state="filled"]::before {
 	content: "\f004"; /* Filled heart icon content */
 }
+
+/* styles.css */

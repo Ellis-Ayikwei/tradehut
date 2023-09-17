@@ -12099,89 +12099,174 @@ textarea.form-control-lg {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.Topsellers-card {
+.promo-card {
   justify-content: center;
   flex-wrap: nowrap !important;
+  overflow-x: auto;
   /* On mouse-over, add a deeper shadow */
 }
-.Topsellers-card .card {
-  width: 20vw;
+.promo-card .card {
+  width: 300px;
   margin: auto;
   padding: 10px;
-}
-.Topsellers-card .card .card-header {
-  font-size: 15px;
-  flex-wrap: nowrap;
-  padding: 0;
-}
-@media (max-width: 767.98px) {
-  .Topsellers-card .card .card-header {
-    font-size: 10px;
-  }
-}
-.Topsellers-card .card .card-header .text-left {
-  padding: 0;
-  text-align: center;
-}
-.Topsellers-card .card .card-header .text-right {
-  text-align: end;
-}
-.Topsellers-card .card {
-  /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   margin: 0 auto;
   float: none;
   margin-bottom: 10px;
+  justify-content: center !important;
+  color: black;
 }
-.Topsellers-card .card:hover {
+@media (max-width: 767.98px) {
+  .promo-card .card {
+    margin-right: 10%;
+  }
+}
+.promo-card .card .alert {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  transform: translate(-50%, 0%);
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+}
+.promo-card .card .alert-info {
+  background-color: #ffd900; /* Green background color */
+  color: rgb(0, 0, 0);
+}
+.promo-card .card .card-header {
+  font-size: 15px;
+  flex-wrap: nowrap;
+  padding: 0;
+}
+@media (max-width: 767.98px) {
+  .promo-card .card .card-header {
+    font-size: 10px;
+  }
+}
+.promo-card .card .card-header .text-left {
+  padding: 0;
+  text-align: center;
+}
+.promo-card .card .card-header .text-right {
+  text-align: end;
+}
+.promo-card .card .card-body {
+  margin-top: 5%;
+}
+.promo-card .card .wish-icon {
+  color: #ff6721;
+}
+.promo-card .card li {
+  color: #f19428;
+}
+.promo-card .card s {
+  color: #5f5f5f;
+}
+.promo-card .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 575.98px) {
-  .Topsellers-card h5 {
-    font-size: 12px;
-  }
-  .Topsellers-card .list-inline {
+  .promo-card .list-inline {
     font-size: 5px;
   }
-  .Topsellers-card .list-inline li {
+  .promo-card .list-inline li {
     margin: 0;
   }
-  .Topsellers-card strike,
-  .Topsellers-card b {
+  .promo-card p,
+  .promo-card s,
+  .promo-card b {
     font-size: 8px !important;
   }
-  .Topsellers-card .btn {
+  .promo-card .btn {
     font-size: 10px;
     padding: 5px;
   }
 }
-.Topsellers-card img {
-  width: 150px;
+.promo-card h5 {
+  font-weight: bold !important;
+  font-family: "Montserrat";
+}
+.promo-card .card-img-top {
+  box-shadow: rgba(153, 153, 153, 0.35) 0px 5px 15px;
+  background-color: rgba(235, 235, 235, 0.3764705882);
+  border-radius: 10%;
+  width: 70%;
+  height: 70%;
   margin: auto;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  padding: 5px;
+}
+.promo-card img {
+  width: 150px;
+  position: inherit;
 }
 @media (max-width: 575.98px) {
-  .Topsellers-card img {
-    width: 30px;
+  .promo-card img {
+    width: 70px;
     margin: auto;
   }
 }
-.Topsellers-card .btn:hover {
+.promo-card .btn {
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: transparent !important;
+  color: #5f5f5f !important;
+  border: none !important;
+  width: auto;
+}
+.promo-card .btn:hover {
   background-color: #f19428 !important;
   border-radius: 20px;
+  color: white !important;
 }
-
-.TopSellers {
-  width: 65vw !important;
+.promo-card .addtocart {
+  background-color: rgb(48, 48, 48) !important;
+  color: white !important;
+  font-size: 16px;
+  padding: 5px 55px 5px 55px;
 }
-@media (min-width: 768px) {
-  .TopSellers {
-    width: 70vw !important;
+@media (max-width: 575.98px) {
+  .promo-card .addtocart {
+    font-size: 2vw;
   }
 }
 
+.promo {
+  width: 100vw !important;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .promo {
+    width: 70vw !important;
+  }
+}
+.promo .alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+.promo .alert-info {
+  background-color: #9dff90; /* Green background color */
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
 .Toprated {
-  width: 25vw !important;
+  width: 30vw !important;
+}
+@media (max-width: 575.98px) {
+  .Toprated {
+    display: none;
+  }
 }
 @media (max-width: 575.98px) {
   .Toprated .card-body {
@@ -12214,6 +12299,7 @@ textarea.form-control-lg {
   content: "\f004"; /* Filled heart icon content */
 }
 
+/* styles.css */
 @media (max-width: 320px) {
   body {
     padding-left: 0;
@@ -12666,6 +12752,50 @@ form .btn button:hover {
 
 .expandright:focus {
   padding: 0 0 0 16px;
+}
+
+.mySidepanel,
+.sidebar {
+  /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 20;
+  left: 0;
+  /* Black*/
+  margin-top: 57px;
+  /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(255, 147, 6);
+  padding: 10px 15px;
+  border: none;
+}
+@media (max-width: 575.98px) {
+  .openbtn p {
+    display: none;
+  }
+  .openbtn i {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
+.openbtn:hover {
+  background-color: #444;
 }
 
 .footer {
