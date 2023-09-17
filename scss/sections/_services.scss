@@ -137,7 +137,7 @@
 
 	@include media-breakpoint-down(sm) {
 		.list-inline {
-			font-size: 5px;
+			font-size: 8px;
 			li {
 				margin: 0;
 			}
@@ -145,7 +145,7 @@
 		p,
 		s,
 		b {
-			font-size: 8px !important;
+			font-size: 16px !important;
 		}
 		.btn {
 			font-size: 10px;
@@ -173,7 +173,7 @@
 		width: 150px;
 		position: inherit;
 		@include media-breakpoint-down(sm) {
-			width: 70px;
+			width: 100px;
 			margin: auto;
 		}
 	}

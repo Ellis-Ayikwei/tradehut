@@ -12169,7 +12169,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .promo-card .list-inline {
-    font-size: 5px;
+    font-size: 8px;
   }
   .promo-card .list-inline li {
     margin: 0;
@@ -12177,7 +12177,7 @@ textarea.form-control-lg {
   .promo-card p,
   .promo-card s,
   .promo-card b {
-    font-size: 8px !important;
+    font-size: 16px !important;
   }
   .promo-card .btn {
     font-size: 10px;
@@ -12206,7 +12206,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .promo-card img {
-    width: 70px;
+    width: 100px;
     margin: auto;
   }
 }
