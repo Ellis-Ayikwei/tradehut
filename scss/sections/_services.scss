@@ -12,44 +12,76 @@
 		font-style: italic;
 		background-color: lightgray;
 	}
+	margin: 0 !important;
 }
+
 .items-catergory-card {
-	justify-content: center;
+	justify-content: start;
 	flex-wrap: nowrap !important;
-	.card {
-		width: 20vw;
-		margin: 2rem;
-		padding: 10px;
-		@include media-breakpoint-down(sm) {
-			width: 40vw;
-		}
-		.card-header {
-			font-size: 15px;
-			flex-wrap: nowrap;
-			padding: 0;
-			@include media-breakpoint-down(md) {
-				font-size: 10px;
-			}
-			.text-left,
-			.text-right {
-				padding: 0;
-				text-align: center;
-			}
-		}
+	overflow-x: auto;
+	/* From https://css.glass */
+	@include media-breakpoint-down(sm) {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
 	}
-	.image-grid-container {
-		display: grid;
-		grid-gap: 5px;
-		/* For 3 columns */
-		grid-template-columns: auto auto;
 
+	// .card {
+	// 	width: 20vw;
+	// 	margin: 2rem;
+	// 	padding: 10px;
+	// 	@include media-breakpoint-down(sm) {
+	// 		width: 40vw;
+	// 	}
+	// 	.card-header {
+	// 		font-size: 15px;
+	// 		flex-wrap: nowrap;
+	// 		padding: 0;
+	// 		@include media-breakpoint-down(md) {
+	// 			font-size: 10px;
+	// 		}
+	// 		.text-left,
+	// 		.text-right {
+	// 			padding: 0;
+	// 			text-align: center;
+	// 		}
+	// 	}
+	// }
+	.catcard {
 		width: auto;
-		height: auto;
+		@include media-breakpoint-down(sm) {
+			margin-left: 10vw !important;
+		}
+		.image-grid-container {
+			display: grid;
+			grid-gap: 5px;
+			/* For 3 columns */
+			grid-template-columns: auto auto;
 
-		img {
 			width: auto;
-			margin: auto;
-			border-radius: 20%;
+			height: auto;
+			.card-img-top {
+				box-shadow: rgba(153, 153, 153, 0.35) 0px 5px 15px;
+				background-color: #ebebeb60;
+				border-radius: 10%;
+
+				margin: auto;
+				justify-content: center;
+				align-content: center;
+				position: relative;
+				padding: 5px;
+			}
+			img {
+				width: 150px;
+				position: inherit;
+				@include media-breakpoint-down(sm) {
+					width: 100px;
+					margin: auto;
+				}
+			}
 		}
 	}
 

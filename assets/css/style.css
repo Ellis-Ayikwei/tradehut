@@ -12039,6 +12039,7 @@ textarea.form-control-lg {
 
 .content-inner {
   flex-wrap: nowrap !important;
+  margin: 0 !important;
 }
 .content-inner aside {
   width: 30%;
@@ -12050,36 +12051,31 @@ textarea.form-control-lg {
 }
 
 .items-catergory-card {
-  justify-content: center;
+  justify-content: start;
   flex-wrap: nowrap !important;
+  overflow-x: auto;
+  /* From https://css.glass */
   /* On mouse-over, add a deeper shadow */
 }
-.items-catergory-card .card {
-  width: 20vw;
-  margin: 2rem;
-  padding: 10px;
+@media (max-width: 575.98px) {
+  .items-catergory-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+.items-catergory-card .catcard {
+  width: auto;
 }
 @media (max-width: 575.98px) {
-  .items-catergory-card .card {
-    width: 40vw;
+  .items-catergory-card .catcard {
+    margin-left: 10vw !important;
   }
 }
-.items-catergory-card .card .card-header {
-  font-size: 15px;
-  flex-wrap: nowrap;
-  padding: 0;
-}
-@media (max-width: 767.98px) {
-  .items-catergory-card .card .card-header {
-    font-size: 10px;
-  }
-}
-.items-catergory-card .card .card-header .text-left,
-.items-catergory-card .card .card-header .text-right {
-  padding: 0;
-  text-align: center;
-}
-.items-catergory-card .image-grid-container {
+.items-catergory-card .catcard .image-grid-container {
   display: grid;
   grid-gap: 5px;
   /* For 3 columns */
@@ -12087,10 +12083,25 @@ textarea.form-control-lg {
   width: auto;
   height: auto;
 }
-.items-catergory-card .image-grid-container img {
-  width: auto;
+.items-catergory-card .catcard .image-grid-container .card-img-top {
+  box-shadow: rgba(153, 153, 153, 0.35) 0px 5px 15px;
+  background-color: rgba(235, 235, 235, 0.3764705882);
+  border-radius: 10%;
   margin: auto;
-  border-radius: 20%;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  padding: 5px;
+}
+.items-catergory-card .catcard .image-grid-container img {
+  width: 150px;
+  position: inherit;
+}
+@media (max-width: 575.98px) {
+  .items-catergory-card .catcard .image-grid-container img {
+    width: 100px;
+    margin: auto;
+  }
 }
 .items-catergory-card .card {
   /* Add shadows to create the "card" effect */
