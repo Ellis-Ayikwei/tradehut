@@ -7,14 +7,14 @@
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
 		/>
-		<title>Hope UI | Responsive Bootstrap 5 Admin Dashboard Template</title>
+		<title>TradeGh</title>
 
 		<!-- Favicon -->
 		<link
 			rel="shortcut icon"
-			href="assets/images/favicon.ico"
+			href="images/favico.png"
 		/>
 		<link
 			rel="stylesheet"
@@ -1253,7 +1253,7 @@
 					
 						<div class="row m-0 items-catergory-card ">
 								
-											<div class="card"> 
+											<div class="card catcard"> 
 												
 												<div class="card-header"><div class="row">
 													<div class="col text-left">
@@ -1283,7 +1283,7 @@
 																						
 																					
 											</div>
-											<div class="card"> 
+											<div class="card catcard"> 
 												
 												<div class="card-header"><div class="row">
 													<div class="col text-left">
@@ -1313,7 +1313,7 @@
 																						
 																					
 											</div>
-											<div class="card"> 
+											<div class="card catcard"> 
 												
 												<div class="card-header"><div class="row">
 													<div class="col text-left">
@@ -1343,7 +1343,7 @@
 																						
 																					
 											</div>
-											<div class="card"> 
+											<div class="card catcard"> 
 												
 												<div class="card-header"><div class="row">
 													<div class="col text-left">
@@ -1946,38 +1946,44 @@ $(document).ready(function(){
 
 
 <script>
+	
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM loaded');
 	function showCardsBasedOnScreenSize() {
-		alert('Function called');
-		const screenWidth = window.innerWidth;
-	  
-		// Define the breakpoint for smaller screens (e.g., 768 pixels)
-		const breakpoint = 768;
-	  
-		// Select all cards
-		const cards = document.querySelectorAll('.items-category-card .card');
-	  
-		// Hide all cards
-		cards.forEach(card => {
-		  card.style.display = 'none';
-		});
-	  
-		if (screenWidth <= breakpoint) {
-		  // Show only the first two cards on smaller screens
-		  for (let i = 0; i < 2; i++) {
-			cards[i].style.display = 'block';
-		  }
-		} else {
-		  // Show all cards on larger screens
-		  cards.forEach(card => {
-			card.style.display = 'block';
-		  });
-		}
-	  }
-	  
-	  // Run the function initially and whenever the window is resized
-	  window.addEventListener('load', showCardsBasedOnScreenSize());
-	  window.addEventListener('resize', showCardsBasedOnScreenSize());
-  </script>
+      console.log('Function called');
+      const screenWidth = window.innerWidth;
+
+      // Define the breakpoint for smaller screens (e.g., 768 pixels)
+      const breakpoint = 768;
+
+      // Select all cards
+      const cards = document.querySelectorAll('.catcard');
+
+      console.log(cards);
+      // Hide all cards
+      cards.forEach(card => {
+        card.style.display = 'none';
+      });
+
+      if (screenWidth <= breakpoint) {
+        // Show only the first two cards on smaller screens
+        for (let i = 0; i < 2; i++) {
+          cards[i].style.display = 'block';
+        }
+      } else {
+        // Show all cards on larger screens
+        cards.forEach(card => {
+          card.style.display = 'block';
+        });
+      }
+    }
+
+    // Run the function initially and whenever the window is resized
+    window.addEventListener('load', showCardsBasedOnScreenSize);
+    window.addEventListener('resize', showCardsBasedOnScreenSize);
+  });
+</script>
+
 
 		<!-- Wrapper End-->
 		<!-- offcanvas start -->

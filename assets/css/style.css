@@ -12059,6 +12059,11 @@ textarea.form-control-lg {
   margin: 2rem;
   padding: 10px;
 }
+@media (max-width: 575.98px) {
+  .items-catergory-card .card {
+    width: 40vw;
+  }
+}
 .items-catergory-card .card .card-header {
   font-size: 15px;
   flex-wrap: nowrap;
