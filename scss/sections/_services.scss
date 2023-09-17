@@ -267,3 +267,12 @@
 }
 
 /* styles.css */
+.iq-navbar-header,
+.iq-header-img {
+	@include media-breakpoint-down(sm) {
+		height: 70px !important;
+		img {
+			height: 50% !important;
+		}
+	}
+}

@@ -12300,6 +12300,17 @@ textarea.form-control-lg {
 }
 
 /* styles.css */
+@media (max-width: 575.98px) {
+  .iq-navbar-header,
+  .iq-header-img {
+    height: 70px !important;
+  }
+  .iq-navbar-header img,
+  .iq-header-img img {
+    height: 50% !important;
+  }
+}
+
 @media (max-width: 320px) {
   body {
     padding-left: 0;
@@ -12762,10 +12773,16 @@ form .btn button:hover {
   z-index: 20;
   left: 0;
   /* Black*/
-  margin-top: 57px;
+  margin-top: 80px;
   /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+@media (min-width: 992px) {
+  .mySidepanel,
+  .sidebar {
+    margin-top: 70px;
+  }
 }
 
 .sidebar .closebtn {
