@@ -15,11 +15,116 @@
 	margin: 0 !important;
 }
 
+.HomeCats {
+	background: #ffefba;
+	background: radial-gradient(
+		circle farthest-corner at center center,
+		#fcf0c9 0%,
+		#f5e5b1 39%,
+		#ffefba 100%
+	);
+	/* From https://css.glass */
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+
+	/* fallback for old browsers */
+
+	.header-title {
+		background-color: transparent;
+	}
+	.card-grid-container {
+		display: grid;
+		grid-gap: 15px;
+		/* For 3 columns */
+		grid-template-columns: auto auto auto auto;
+
+		width: auto;
+		height: auto;
+		@include media-breakpoint-down(sm) {
+			grid-template-columns: auto auto;
+		}
+		.card {
+			width: auto;
+			overflow: hidden;
+			.card-header {
+				padding: 10px;
+				margin: 0;
+				white-space: nowrap;
+				.col {
+					margin: 0;
+				}
+			}
+			.cats-image {
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+			}
+			img {
+				width: 100%;
+				height: 25vw;
+				position: inherit;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease-in-out;
+
+				@include media-breakpoint-down(sm) {
+					width: 100%;
+					height: 30vw;
+					margin: auto;
+				}
+			}
+			.card-footer {
+				display: none;
+			}
+		}
+		.card .cardfooter {
+			position: absolute;
+			bottom: -200px;
+			background-color: $primary;
+			// height: 50px;
+			// width: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 5px;
+			color: rgb(255, 235, 124);
+			opacity: 0;
+			// transform: translateY(20%);
+			transition: all 0.5s ease;
+		}
+
+		.card:hover .cardfooter {
+			bottom: 0px;
+			opacity: 1;
+		}
+		.card:hover {
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+				rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+			transform: scale(1.05);
+			transition: all 0.5s ease;
+			img {
+				filter: blur(1px);
+
+				filter: saturate(200%);
+				filter: sepia(30%);
+			}
+		}
+	}
+}
+
 .items-catergory-card {
-	justify-content: start;
+	justify-content: center;
 	flex-wrap: nowrap !important;
 	overflow-x: auto;
 	/* From https://css.glass */
+
+	@media (max-width: 1254px) {
+		justify-content: start;
+	}
 	@include media-breakpoint-down(sm) {
 		background: rgba(255, 255, 255, 0.2);
 		border-radius: 16px;
@@ -52,8 +157,13 @@
 	// }
 	.catcard {
 		width: auto;
+		margin: 1% !important;
 		@include media-breakpoint-down(sm) {
-			margin-left: 10vw !important;
+			margin-right: 10vw !important;
+			.card-header {
+				font-size: 10px;
+				white-space: nowrap;
+			}
 		}
 		.image-grid-container {
 			display: grid;
@@ -75,10 +185,10 @@
 				padding: 5px;
 			}
 			img {
-				width: 150px;
+				width: 120px;
 				position: inherit;
 				@include media-breakpoint-down(sm) {
-					width: 100px;
+					width: 60px;
 					margin: auto;
 				}
 			}
@@ -292,15 +402,6 @@
 	}
 }
 
-.heart-icon[data-state="empty"]::before {
-	content: "\f08a"; /* Outline heart icon content */
-}
-
-/* Filled state */
-.heart-icon[data-state="filled"]::before {
-	content: "\f004"; /* Filled heart icon content */
-}
-
 /* styles.css */
 .iq-navbar-header,
 .iq-header-img {
@@ -309,5 +410,55 @@
 		img {
 			height: 50% !important;
 		}
+	}
+}
+.test {
+	.card {
+		flex-direction: row;
+		max-width: 30em;
+		border: 0;
+		background-color: #696969;
+		color: #fff;
+		box-shadow: 0 7px 7px rgba(0, 0, 0, 0.18);
+		@include media-breakpoint-up(sm) {
+			flex-direction: column;
+			max-width: 15em;
+		}
+	}
+	.card img {
+		max-width: 25%;
+		margin: auto;
+		padding: 0.5em;
+		border-radius: 0.7em;
+	}
+	.card-body {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		@include media-breakpoint-up(md) {
+			flex-direction: column;
+		}
+	}
+	.text-section {
+		max-width: 100%;
+	}
+	.cta-section {
+		max-width: 40%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: space-between;
+		@include media-breakpoint-up(md) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	.cta-section .btn {
+		padding: 0.2em 0.5em;
+		font-size: 1em;
+		color: #696969;
+	}
+	.card-text {
+		letter-spacing: 0.1em;
 	}
 }
