@@ -373,6 +373,16 @@
 		color: rgb(0, 0, 0);
 		font-weight: bold;
 	}
+	.banner {
+		@include media-breakpoint-down(sm) {
+			height: 30vh;
+			justify-content: center;
+			padding: 0;
+			img {
+				width: 100%;
+			}
+		}
+	}
 }
 .Toprated {
 	width: 30vw !important;
@@ -412,6 +422,7 @@
 		}
 	}
 }
+
 .test {
 	.card {
 		flex-direction: row;

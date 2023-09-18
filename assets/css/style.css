@@ -12374,6 +12374,16 @@ textarea.form-control-lg {
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
+@media (max-width: 575.98px) {
+  .promo .banner {
+    height: 30vh;
+    justify-content: center;
+    padding: 0;
+  }
+  .promo .banner img {
+    width: 100%;
+  }
+}
 
 .Toprated {
   width: 30vw !important;
