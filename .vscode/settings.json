@@ -1,1 +1,3 @@
-{}
+{
+	"iis.configDir": "${workspaceFolder}\\.vs\\bootstrap v1\\config"
+}

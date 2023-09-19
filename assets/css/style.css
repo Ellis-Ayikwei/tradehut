@@ -12088,6 +12088,11 @@ textarea.form-control-lg {
 .HomeCats .card-grid-container .card .card-header .col {
   margin: 0;
 }
+@media (max-width: 575.98px) {
+  .HomeCats .card-grid-container .card .card-header {
+    font-size: small;
+  }
+}
 .HomeCats .card-grid-container .card .cats-image {
   overflow: hidden;
   width: 100%;
@@ -12382,6 +12387,7 @@ textarea.form-control-lg {
   }
   .promo .banner img {
     width: 100%;
+    height: 30vh;
   }
 }
 
