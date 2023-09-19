@@ -35,7 +35,10 @@ for (let i = 0; i < carts.length; i++) {
 function onloadcartnumbers() {
 	let productnumbers = localStorage.getItem("cartNumber");
 	if (productnumbers) {
-		document.querySelector(".cartb").textContent = productnumbers;
+		const cartnumber = document.querySelectorAll(".cartb");
+		cartnumber.forEach((element) => {
+			element.textContent = productnumbers;
+		});
 	}
 }
 //add item to the localstorage

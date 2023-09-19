@@ -87,10 +87,638 @@
 			rel="stylesheet"
 			href="assets/css/rtl.min.css"
 		/>
+
+<style>
+	body{
+		scroll-behavior: smooth;
+	}
+</style>
+
 	</head>
 	<body class="  ">
-		
-		<!-- loader END -->
+
+		<!-- modal for carts -->
+		<div
+										class="modal fade cart-modal"
+										role="dialog"
+										tabindex="-1"
+										id="cart-modal"
+									>
+										<div
+											class="modal-dialog modal-lg"
+											role="document"
+										>
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title header-title">My Cart</h5>
+													<button
+														type="button"
+														class="close p-2 border-0"
+														data-dismiss="modal"
+													>
+														<span aria-hidden="true"><i class="fas fa-times"></i></span>
+													</button>
+												</div>
+												<div class="modal-body">
+													
+													<div class="col">
+														
+														
+				
+														<div
+															class="d-flex justify-content-between align-items-center mb-4"
+														>
+															<div>
+																<p class="mb-1">Shopping cart</p>
+																<p class="mb-0">You have <span class="cartb">
+																	0
+																</span> items in your cart</p>
+															</div>
+															<div>
+																<p class="mb-0">
+																	<span class="text-muted">Sort by:</span>
+																	<a
+																		href="#!"
+																		class="text-body"
+																		>price <i class="fas fa-angle-down mt-1"></i
+																	></a>
+																</p>
+															</div>
+														</div>
+				
+														<div class="card mb-3">
+															<div class="card-body">
+																<div class="row align-items-center">
+																	<div class="col flex-grow-0">
+																		<img
+																			src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																			class="rounded-3"
+																			alt="Shopping item"
+																			style="width: 65px"
+																		/>
+																	</div>
+																	<div class="col m-0 p-0">
+																		<div
+																			class="card-body row align-items-center m-0 p-0"
+																		>
+																			<div
+																				class="col-sm-3 col-md-3 col-lg-3 col-xl-3 flex-grow-1"
+																			>
+																				<p class="small mb-0 text-muted text-sm">
+																					256GB, Navy Blue
+																				</p>
+																				<h5
+																					class="text-black mb-0"
+																					style="font-size: 1em"
+																				>
+																					Samsung galaxy Note 10
+																				</h5>
+																				<p
+																					class="small mb-0 text-muted text-sm unitPrice"
+																				>
+																					unite Price: <span>€ 44.00</span>
+																				</p>
+																			</div>
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+																			<div class="col">
+																				<h6 class="mb-0">€ 44.00</h6>
+																			</div>
+																			<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+																				<a
+																					href="#!"
+																					style="color: #cecece"
+																					><i class="fas fa-trash-alt"></i
+																				></a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+				
+														<div class="card mb-3">
+															<div class="card-body">
+																<div class="row align-items-center">
+																	<div class="col flex-grow-0">
+																		<img
+																			src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																			class="rounded-3"
+																			alt="Shopping item"
+																			style="width: 65px"
+																		/>
+																	</div>
+																	<div class="col m-0 p-0">
+																		<div
+																			class="card-body row align-items-center m-0 p-0"
+																		>
+																			<div
+																				class="col-sm-3 col-md-3 col-lg-3 col-xl-3 flex-grow-1"
+																			>
+																				<p class="small mb-0 text-muted text-sm">
+																					256GB, Navy Blue
+																				</p>
+																				<h5
+																					class="text-black mb-0"
+																					style="font-size: 1em"
+																				>
+																					Samsung galaxy Note 10
+																				</h5>
+																				<p
+																					class="small mb-0 text-muted text-sm unitPrice"
+																				>
+																					unite Price: <span>€ 44.00</span>
+																				</p>
+																			</div>
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+																			<div class="col">
+																				<h6 class="mb-0">€ 44.00</h6>
+																			</div>
+																			<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+																				<a
+																					href="#!"
+																					style="color: #cecece"
+																					><i class="fas fa-trash-alt"></i
+																				></a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+				
+														<div class="card mb-3">
+															<div class="card-body">
+																<div class="row align-items-center">
+																	<div class="col flex-grow-0">
+																		<img
+																			src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																			class="rounded-3"
+																			alt="Shopping item"
+																			style="width: 65px"
+																		/>
+																	</div>
+																	<div class="col m-0 p-0">
+																		<div
+																			class="card-body row align-items-center m-0 p-0"
+																		>
+																			<div
+																				class="col-sm-3 col-md-3 col-lg-3 col-xl-3 flex-grow-1"
+																			>
+																				<p class="small mb-0 text-muted text-sm">
+																					256GB, Navy Blue
+																				</p>
+																				<h5
+																					class="text-black mb-0"
+																					style="font-size: 1em"
+																				>
+																					Samsung galaxy Note 10
+																				</h5>
+																				<p
+																					class="small mb-0 text-muted text-sm unitPrice"
+																				>
+																					unite Price: <span>€ 44.00</span>
+																				</p>
+																			</div>
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+																			<div class="col">
+																				<h6 class="mb-0">€ 44.00</h6>
+																			</div>
+																			<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+																				<a
+																					href="#!"
+																					style="color: #cecece"
+																					><i class="fas fa-trash-alt"></i
+																				></a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+				
+														
+													</div>
+														
+												
+												</div>
+												
+													<div class="row m-3
+															">
+																<div class="d-flex justify-content-between">
+													
+																	<a
+																		class="btn btn-primary close "
+																		type="button"
+																		data-dismiss="modal"
+																	>
+																		Continue Shopping
+																</a>
+																	<button
+																		class="btn btn-primary w-50"
+																		type="submit"
+																	>
+																		checkout &nbsp; <span class="cartb badge bg-success rounded-5 p-2">
+																			0
+																		</span>
+																	</button>
+													
+																</div>
+															</div>
+												
+											</div>
+										</div>
+		</div>
+
+
+
+
+		<!-- modal for carts  END -->
+			<!-- modal for carts -->
+			<div
+			class="modal fade cart-modal"
+			role="dialog"
+			tabindex="-1"
+			id="wishlist-modal"
+		>
+			<div
+				class="modal-dialog modal-lg"
+				role="document"
+			>
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title header-title">My Cart</h5>
+						<button
+							type="button"
+							class="close p-2 border-0"
+							data-dismiss="modal"
+						>
+							<span aria-hidden="true"><i class="fas fa-times"></i></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<div class="col">
+							
+							
+
+							<div
+								class="d-flex justify-content-between align-items-center mb-4"
+							>
+								<div>
+									<p class="mb-1">Shopping cart</p>
+									<p class="mb-0">You have <span class="cartb">
+										0
+									</span> items in your cart</p>
+								</div>
+								<div>
+									<p class="mb-0">
+										<span class="text-muted">Sort by:</span>
+										<a
+											href="#!"
+											class="text-body"
+											>price <i class="fas fa-angle-down mt-1"></i
+										></a>
+									</p>
+								</div>
+							</div>
+
+							<div class="card mb-3">
+								<div class="card-body">
+									<div class="row align-items-center">
+										<div class="col flex-grow-0">
+											<img
+												src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+												class="rounded-3"
+												alt="Shopping item"
+												style="width: 65px"
+											/>
+										</div>
+										<div class="col m-0 p-0">
+											<div
+												class="card-body row align-items-center m-0 p-0"
+											>
+												<div
+													class="col-sm-3 col-md-3 col-lg-3 col-xl-3 flex-grow-1"
+												>
+													<p class="small mb-0 text-muted text-sm">
+														256GB, Navy Blue
+													</p>
+													<h5
+														class="text-black mb-0"
+														style="font-size: 1em"
+													>
+														Samsung galaxy Note 10
+													</h5>
+													<p
+														class="small mb-0 text-muted text-sm unitPrice"
+													>
+														unite Price: <span>€ 44.00</span>
+													</p>
+												</div>
+												<div class="col align-items-center">
+													<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+														<button
+															class="btn btn-link px-2"
+															onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+														>
+															<i class="fas fa-minus"></i>
+														</button>
+
+														<input
+															id="form1"
+															min="0"
+															name="quantity"
+															value="1"
+															type="number"
+															class="form-control form-control-sm p-1"
+														/>
+
+														<button
+															class="btn btn-link px-2"
+															onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+														>
+															<i class="fas fa-plus"></i>
+														</button>
+													</div>
+												</div>
+												<div class="col">
+													<h6 class="mb-0">€ 44.00</h6>
+												</div>
+												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+													<a
+														href="#!"
+														style="color: #cecece"
+														><i class="fas fa-trash-alt"></i
+													></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mb-3">
+								<div class="card-body">
+									<div class="row align-items-center">
+										<div class="col flex-grow-0">
+											<img
+												src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+												class="rounded-3"
+												alt="Shopping item"
+												style="width: 65px"
+											/>
+										</div>
+										<div class="col m-0 p-0">
+											<div
+												class="card-body row align-items-center m-0 p-0"
+											>
+												<div
+													class="col-sm-3 col-md-3 col-lg-3 col-xl-3 flex-grow-1"
+												>
+													<p class="small mb-0 text-muted text-sm">
+														256GB, Navy Blue
+													</p>
+													<h5
+														class="text-black mb-0"
+														style="font-size: 1em"
+													>
+														Samsung galaxy Note 10
+													</h5>
+													<p
+														class="small mb-0 text-muted text-sm unitPrice"
+													>
+														unite Price: <span>€ 44.00</span>
+													</p>
+												</div>
+												<div class="col align-items-center">
+													<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+														<button
+															class="btn btn-link px-2"
+															onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+														>
+															<i class="fas fa-minus"></i>
+														</button>
+
+														<input
+															id="form1"
+															min="0"
+															name="quantity"
+															value="1"
+															type="number"
+															class="form-control form-control-sm p-1"
+														/>
+
+														<button
+															class="btn btn-link px-2"
+															onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+														>
+															<i class="fas fa-plus"></i>
+														</button>
+													</div>
+												</div>
+												<div class="col">
+													<h6 class="mb-0">€ 44.00</h6>
+												</div>
+												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+													<a
+														href="#!"
+														style="color: #cecece"
+														><i class="fas fa-trash-alt"></i
+													></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mb-3">
+								<div class="card-body">
+									<div class="row align-items-center">
+										<div class="col flex-grow-0">
+											<img
+												src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+												class="rounded-3"
+												alt="Shopping item"
+												style="width: 65px"
+											/>
+										</div>
+										<div class="col m-0 p-0">
+											<div
+												class="card-body row align-items-center m-0 p-0"
+											>
+												<div
+													class="col-sm-3 col-md-3 col-lg-3 col-xl-3 flex-grow-1"
+												>
+													<p class="small mb-0 text-muted text-sm">
+														256GB, Navy Blue
+													</p>
+													<h5
+														class="text-black mb-0"
+														style="font-size: 1em"
+													>
+														Samsung galaxy Note 10
+													</h5>
+													<p
+														class="small mb-0 text-muted text-sm unitPrice"
+													>
+														unite Price: <span>€ 44.00</span>
+													</p>
+												</div>
+												<div class="col align-items-center">
+													<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+														<button
+															class="btn btn-link px-2"
+															onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+														>
+															<i class="fas fa-minus"></i>
+														</button>
+
+														<input
+															id="form1"
+															min="0"
+															name="quantity"
+															value="1"
+															type="number"
+															class="form-control form-control-sm p-1"
+														/>
+
+														<button
+															class="btn btn-link px-2"
+															onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+														>
+															<i class="fas fa-plus"></i>
+														</button>
+													</div>
+												</div>
+												<div class="col">
+													<h6 class="mb-0">€ 44.00</h6>
+												</div>
+												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+													<a
+														href="#!"
+														style="color: #cecece"
+														><i class="fas fa-trash-alt"></i
+													></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+						</div>
+							
+					
+					</div>
+					
+						<div class="row m-3
+								">
+									<div class="d-flex justify-content-between">
+						
+										<a
+											class="btn btn-primary close "
+											type="button"
+											data-dismiss="modal"
+										>
+											Continue Shopping
+									</a>
+										<button
+											class="btn btn-primary w-50"
+											type="submit"
+										>
+											checkout &nbsp; <span class="cartb badge bg-success rounded-5 p-2">
+												0
+											</span>
+										</button>
+						
+									</div>
+								</div>
+					
+				</div>
+			</div>
+			</div>
+
+
+
+
+<!-- modal for carts  END -->
 
 		
 		<main class="main-content">
@@ -496,7 +1124,7 @@
 						<div class="sidebar-footer"></div>
 					</aside> 
 
-					<nav class="nav navbar  navbar-expand navbar-light  fixed-top flex-nowrap">
+					<nav class="nav navbar  navbar-expand navbar-light  fixed-top flex-nowrap firstnavbar">
 						<div class="container-fluid ">
 							<a
 								href="../dashboard/index.html"
@@ -514,7 +1142,7 @@
 								<!--logo End-->
 								
 							</a>
-						
+							
 							
 							<div
 								class="collapse navbar-collapse"
@@ -541,7 +1169,7 @@
 											aria-expanded="false"
 										>
 											<img
-												src="../assets/images/Flag/flag001.png"
+												src="assets/images/Flag/flag001.png"
 												class="img-fluid rounded-circle"
 												alt="user"
 												style="height: 15px; min-width: 15px; width: 15px"
@@ -560,7 +1188,7 @@
 																class="p-0"
 																href="#"
 																><img
-																	src="../assets/images/Flag/flag-03.png"
+																	src="assets/images/Flag/flag-03.png"
 																	alt="img-flaf"
 																	class="img-fluid me-2"
 																	style="
@@ -576,7 +1204,7 @@
 																class="p-0"
 																href="#"
 																><img
-																	src="../assets/images/Flag/flag-04.png"
+																	src="assets/images/Flag/flag-04.png"
 																	alt="img-flaf"
 																	class="img-fluid me-2"
 																	style="
@@ -592,7 +1220,7 @@
 																class="p-0"
 																href="#"
 																><img
-																	src="../assets/images/Flag/flag-02.png"
+																	src="assets/images/Flag/flag-02.png"
 																	alt="img-flaf"
 																	class="img-fluid me-2"
 																	style="
@@ -608,7 +1236,7 @@
 																class="p-0"
 																href="#"
 																><img
-																	src="../assets/images/Flag/flag-05.png"
+																	src="assets/images/Flag/flag-05.png"
 																	alt="img-flaf"
 																	class="img-fluid me-2"
 																	style="
@@ -624,7 +1252,7 @@
 																class="p-0"
 																href="#"
 																><img
-																	src="../assets/images/Flag/flag-06.png"
+																	src="assets/images/Flag/flag-06.png"
 																	alt="img-flaf"
 																	class="img-fluid me-2"
 																	style="
@@ -641,168 +1269,16 @@
 										</div>
 									</li>
 									<li class="nav-item dropdown">
-										<a
-											href="#"
-											class="nav-link"
-											id="notification-drop"
-											data-bs-toggle="dropdown"
-										>
-											<svg
-												class="icon-24"
-												width="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M19.7695 11.6453C19.039 10.7923 18.7071 10.0531 18.7071 8.79716V8.37013C18.7071 6.73354 18.3304 5.67907 17.5115 4.62459C16.2493 2.98699 14.1244 2 12.0442 2H11.9558C9.91935 2 7.86106 2.94167 6.577 4.5128C5.71333 5.58842 5.29293 6.68822 5.29293 8.37013V8.79716C5.29293 10.0531 4.98284 10.7923 4.23049 11.6453C3.67691 12.2738 3.5 13.0815 3.5 13.9557C3.5 14.8309 3.78723 15.6598 4.36367 16.3336C5.11602 17.1413 6.17846 17.6569 7.26375 17.7466C8.83505 17.9258 10.4063 17.9933 12.0005 17.9933C13.5937 17.9933 15.165 17.8805 16.7372 17.7466C17.8215 17.6569 18.884 17.1413 19.6363 16.3336C20.2118 15.6598 20.5 14.8309 20.5 13.9557C20.5 13.0815 20.3231 12.2738 19.7695 11.6453Z"
-													fill="currentColor"
-												></path>
-												<path
-													opacity="0.4"
-													d="M14.0088 19.2283C13.5088 19.1215 10.4627 19.1215 9.96275 19.2283C9.53539 19.327 9.07324 19.5566 9.07324 20.0602C9.09809 20.5406 9.37935 20.9646 9.76895 21.2335L9.76795 21.2345C10.2718 21.6273 10.8632 21.877 11.4824 21.9667C11.8123 22.012 12.1482 22.01 12.4901 21.9667C13.1083 21.877 13.6997 21.6273 14.2036 21.2345L14.2026 21.2335C14.5922 20.9646 14.8734 20.5406 14.8983 20.0602C14.8983 19.5566 14.4361 19.327 14.0088 19.2283Z"
-													fill="currentColor"
-												></path>
-											</svg>
-											<span class="bg-danger dots"></span>
-										</a>
-										<div
-											class="p-0 sub-drop dropdown-menu dropdown-menu-end"
-											aria-labelledby="notification-drop"
-										>
-											<div class="m-0 shadow-none card">
-												<div
-													class="py-3 card-header d-flex justify-content-between bg-primary"
-												>
-													<div class="header-title">
-														<h5 class="mb-0 text-white">All Notifications</h5>
-													</div>
-												</div>
-												<div class="p-0 card-body">
-													<a
-														href="#"
-														class="iq-sub-card"
-													>
-														<div class="d-flex align-items-center">
-															<img
-																class="p-1 avatar-40 rounded-pill bg-soft-primary"
-																src="../assets/images/shapes/01.png"
-																alt=""
-															/>
-															<div class="ms-3 w-100">
-																<h6 class="mb-0">Emma Watson Bni</h6>
-																<div
-																	class="d-flex justify-content-between align-items-center"
-																>
-																	<p class="mb-0">95 MB</p>
-																	<small class="float-end font-size-12"
-																		>Just Now</small
-																	>
-																</div>
-															</div>
-														</div>
-													</a>
-													<a
-														href="#"
-														class="iq-sub-card"
-													>
-														<div class="d-flex align-items-center">
-															<div class="">
-																<img
-																	class="p-1 avatar-40 rounded-pill bg-soft-primary"
-																	src="../assets/images/shapes/02.png"
-																	alt=""
-																/>
-															</div>
-															<div class="ms-3 w-100">
-																<h6 class="mb-0">New customer is join</h6>
-																<div
-																	class="d-flex justify-content-between align-items-center"
-																>
-																	<p class="mb-0">Cyst Bni</p>
-																	<small class="float-end font-size-12"
-																		>5 days ago</small
-																	>
-																</div>
-															</div>
-														</div>
-													</a>
-													<a
-														href="#"
-														class="iq-sub-card"
-													>
-														<div class="d-flex align-items-center">
-															<img
-																class="p-1 avatar-40 rounded-pill bg-soft-primary"
-																src="../assets/images/shapes/03.png"
-																alt=""
-															/>
-															<div class="ms-3 w-100">
-																<h6 class="mb-0">Two customer is left</h6>
-																<div
-																	class="d-flex justify-content-between align-items-center"
-																>
-																	<p class="mb-0">Cyst Bni</p>
-																	<small class="float-end font-size-12"
-																		>2 days ago</small
-																	>
-																</div>
-															</div>
-														</div>
-													</a>
-													<a
-														href="#"
-														class="iq-sub-card"
-													>
-														<div class="d-flex align-items-center">
-															<img
-																class="p-1 avatar-40 rounded-pill bg-soft-primary"
-																src="../assets/images/shapes/04.png"
-																alt=""
-															/>
-															<div class="w-100 ms-3">
-																<h6 class="mb-0">New Mail from Fenny</h6>
-																<div
-																	class="d-flex justify-content-between align-items-center"
-																>
-																	<p class="mb-0">Cyst Bni</p>
-																	<small class="float-end font-size-12"
-																		>3 days ago</small
-																	>
-																</div>
-															</div>
-														</div>
-													</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="nav-item dropdown">
-										<a
-											href="#"
-											class="nav-link"
-											id="mail-drop"
-											data-bs-toggle="dropdown"
-											aria-haspopup="true"
-											aria-expanded="false"
-										>
-											<svg
-												class="icon-24"
-												width="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													opacity="0.4"
-													d="M22 15.94C22 18.73 19.76 20.99 16.97 21H16.96H7.05C4.27 21 2 18.75 2 15.96V15.95C2 15.95 2.006 11.524 2.014 9.298C2.015 8.88 2.495 8.646 2.822 8.906C5.198 10.791 9.447 14.228 9.5 14.273C10.21 14.842 11.11 15.163 12.03 15.163C12.95 15.163 13.85 14.842 14.56 14.262C14.613 14.227 18.767 10.893 21.179 8.977C21.507 8.716 21.989 8.95 21.99 9.367C22 11.576 22 15.94 22 15.94Z"
-													fill="currentColor"
-												></path>
-												<path
-													d="M21.4759 5.67351C20.6099 4.04151 18.9059 2.99951 17.0299 2.99951H7.04988C5.17388 2.99951 3.46988 4.04151 2.60388 5.67351C2.40988 6.03851 2.50188 6.49351 2.82488 6.75151L10.2499 12.6905C10.7699 13.1105 11.3999 13.3195 12.0299 13.3195C12.0339 13.3195 12.0369 13.3195 12.0399 13.3195C12.0429 13.3195 12.0469 13.3195 12.0499 13.3195C12.6799 13.3195 13.3099 13.1105 13.8299 12.6905L21.2549 6.75151C21.5779 6.49351 21.6699 6.03851 21.4759 5.67351Z"
-													fill="currentColor"
-												></path>
-											</svg>
+										
+										<a href=/store/cart.stml" 
+										id="mail-drop"
+										data-bs-toggle="dropdown"
+										aria-haspopup="true"
+										aria-expanded="false" class="cart position-relative d-inline-flex nav-link" aria-label="View your shopping cart">
+											<i class="fas fa fa-bell fa-lg"></i>
+											<span class="cart-basket notif d-flex align-items-center justify-content-center">
+												0
+											</span>
 											<span class="bg-primary count-mail"></span>
 										</a>
 										<div
@@ -923,6 +1399,77 @@
 										</div>
 									</li>
 									<li class="nav-item dropdown">
+										
+										<a class="cart position-relative d-inline-flex nav-link"
+							type="button"
+							data-toggle="modal"
+							data-target="#wishlist-modal">
+											<i class="fas fa fa-heart fa-lg"></i>
+											<span class="cart-basket favorites d-flex align-items-center justify-content-center">
+												0
+											</span>
+											<span class="bg-primary count-mail"></span>
+										</a>
+										
+									</li>
+									<li class="nav-item dropdown">
+										
+										<a class="cart position-relative d-inline-flex nav-link"
+							type="button"
+							data-toggle="modal"
+							data-target="#cart-modal">
+											<i class="fas fa fa-shopping-cart fa-lg"></i>
+											<span class="cart-basket cartb d-flex align-items-center justify-content-center">
+												0
+											</span>
+											<span class="bg-primary count-mail"></span>
+										</a>
+										
+									</li>
+
+									
+									
+
+									<li class="nav-item dropdown">
+										<a href=/store/cart.stml" 
+										id="mail-drop"
+										data-bs-toggle="dropdown"
+										aria-haspopup="true"
+										aria-expanded="false" class="cart position-relative d-inline-flex nav-link" aria-label="View your shopping cart">
+											<i class="fas fa fa-sign-in fa-lg"></i>
+										
+											<span class="bg-primary count-mail"></span>
+										</a>
+										<ul
+											class="dropdown-menu dropdown-menu-end"
+											aria-labelledby="navbarDropdown"
+										>
+											<li>
+												<a
+													class="dropdown-item"
+													href="../dashboard/app/user-profile.html"
+													>Login</a
+												>
+											</li>
+											<li>
+												<a
+													class="dropdown-item"
+													href="../dashboard/app/user-privacy-setting.html"
+													>Register</a
+												>
+											</li>
+											<li><hr class="dropdown-divider" /></li>
+											<li>
+												<a
+													class="dropdown-item"
+													href="../dashboard/auth/sign-in.html"
+													>Conitue as a guest</a
+												>
+											</li>
+										</ul>
+										
+									</li>
+									<!-- <li class="nav-item dropdown">
 										<a
 											class="py-0 nav-link d-flex align-items-center"
 											href="#"
@@ -966,7 +1513,7 @@
 												>
 											</li>
 										</ul>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</div>
@@ -1010,7 +1557,7 @@
 								>
 					
 									<i class="fas fa-filter"></i>
-									<span>sort<span class="cartb">0</span></span>
+									<span>sort</span>
 									
 								</a>
 								<div
@@ -1362,7 +1909,7 @@
 						</div>
 				
 						<div class="row m-0 flex-nowrap">
-							<div class="col-md-9 col-lg-8 col-sm-5 me-4 Promo">
+							<div class="col-md-8 col-lg-8 col-sm-8 me-4 Promo">
 									<div class="row">
 									
 										<div class="card ">
@@ -1403,15 +1950,10 @@
 																	</div></div>
 																
 																	<div class="card-img-top text-center d-flex align-items-center"><img src="assets/images/phones/iphonex.png" class="mx-auto" alt="..."></div>
-																	
-																	
-
-																	
-																
 																	<div class="card-body  p-0">
 																		<h5 class="card-title mb-0">Apple iphone</h5>
 																		<p class="card-text"><div class="star-rating">
-																			<P>Lorem ipsum dolor, 
+																			<P class="text-muted">Lorem ipsum dolor, 
 																				sit amet consectetur adipisicing 
 																				elit. Necessitatibus nam earum 
 																				voluptatem debitis recusandae 
@@ -1422,28 +1964,52 @@
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><span><a href="" class="mb-0"><small>55 reviews</small></a></span></li>
 																			</ul>
-																			<p class="mb-0"><small>55 reviews</small></p>
+																			
 																		</div></p>
 																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>369.00</b> <em class="badge bg-gray">save ₵20</em> </p>
 																				
 
 																		<div class="row align-items-center">
-																			<div class="col "><a href="#" class="btn btn-primary ">Buy Now</a></div>
+																			
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex col-sm-3">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+
 																			<div class="col text-center  add2cart cartIcons"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
 																		</div>
+																		<div class=" col inyourcart text-center bg-body-tertiary"><small class=" text-muted" style=" font-size: x-small;">in your cart</small></div>
+
 																	  </div>
-																	  
-																	 
-																										
-																									
-															</div>
-															
-														
-																								
-																																										
-														</div>
-													</div></div>
+																	</div>
+																</div>
+																																			
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1558,46 +2124,104 @@
 												</div>
 												<div>
 														
-														<a>
-															<div class="d-flex align-items-center mb-4 bg-body-secondary rounded-2 w-100 ">
-																<img
-																	src="https://i.imgur.com/uRgdVY1.jpg"
-																	alt="Category"
-																	class="img-fluid"width="40" height="40"
-																/>
-																<div class=" flex-grow-1 justifty align-content-center">
-																	<p>Best Offers</p>
-																	<ul class="list-inline">
+												<a>
+															<div class="card mb-3">
+																<div class="card-body p-1">
+																	<div class="row align-items-center">
+																		<div class="col flex-grow-0">
+																			<img
+																				src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																				class="rounded-1"
+																				alt="Shopping item"
+																				style="width: 40px"
+																			/>
+																		</div>
+																		<div class="col m-0 p-0">
+																			<div
+																				class="card-body row align-items-center m-0 p-0"
+																			>
+																				<div
+																					class="col-sm-5 col-md-5 col-lg-3 col-xl-3 flex-grow-1 p-0"
+																				>
+																					
+																					<div
+																						class="text-black mb-0 card-title"
+																						
+																					>
+																						Samsung galaxy Note 10
+																		</div>
+																					<div
+																						class="small mb-0 " style="font-size: xx-small;"
+																					>
+																					<ul class="list-inline m-0 justify-content-center" >
 																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																					</ul>
-																					<p class="mb-0">Ghc 500</p>
+																				</div>
+																				</div>
+																				
+																				<div class="col price">
+																					<p class="mb-0 ">€ 44.00</p>
+																				</div>
+																				
+																			</div>
+																		</div>
+																	</div>
 																</div>
 															</div>
 												</a>
 												<a>
-													<div class="d-flex align-items-center mb-4 bg-body-secondary rounded-2 w-100 ">
-														<img
-															src="https://i.imgur.com/uRgdVY1.jpg"
-															alt="Category"
-															class="img-fluid"width="40" height="40"
-														/>
-														<div class=" flex-grow-1 justifty align-content-center">
-															<p>Best Offers</p>
-															<ul class="list-inline m-0 justify-content-center">
+													<div class="card mb-3">
+														<div class="card-body p-1">
+															<div class="row align-items-center">
+																<div class="col flex-grow-0">
+																	<img
+																		src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																		class="rounded-1"
+																		alt="Shopping item"
+																		style="width: 40px"
+																	/>
+																</div>
+																<div class="col m-0 p-0">
+																	<div
+																		class="card-body row align-items-center m-0 p-0"
+																	>
+																		<div
+																			class="col-sm-5 col-md-5 col-lg-3 col-xl-3 flex-grow-1 p-0"
+																		>
+																			
+																			<div
+																				class="text-black mb-0 card-title"
+																				
+																			>
+																				Samsung galaxy Note 10
+																</div>
+																			<div
+																				class="small mb-0 " style="font-size: xx-small;"
+																			>
+																			<ul class="list-inline m-0 justify-content-center" >
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																			</ul>
-																			<p class="mb-0">Ghc 500</p>
+																		</div>
+																		</div>
+																		
+																		<div class="col price">
+																			<p class="mb-0 ">€ 44.00</p>
+																		</div>
+																		
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
-										</a>											
+										</a>								
 														
 												
 												
@@ -1608,6 +2232,123 @@
 									<div class="col-lg-12">
 										<div class="card">
 															<img src="assets/images/sale.jpg" alt="" class="img-fluid  h-50">
+										</div>
+									</div>
+									<div class="row">
+									
+										<div class="card p-2">
+											<div class="card-body">
+												<div class="d-flex justify-content-between mb-4 ">
+													<p>Top Rated</p>
+													<a href="">
+																		<p >View More</p>
+																	</a>
+												</div>
+												<div>
+														
+												<a>
+															<div class="card mb-3">
+																<div class="card-body p-1">
+																	<div class="row align-items-center">
+																		<div class="col flex-grow-0">
+																			<img
+																				src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																				class="rounded-1"
+																				alt="Shopping item"
+																				style="width: 40px"
+																			/>
+																		</div>
+																		<div class="col m-0 p-0">
+																			<div
+																				class="card-body row align-items-center m-0 p-0"
+																			>
+																				<div
+																					class="col-sm-5 col-md-5 col-lg-3 col-xl-3 flex-grow-1 p-0"
+																				>
+																					
+																					<div
+																						class="text-black mb-0 card-title"
+																						
+																					>
+																						Samsung galaxy Note 10
+																		</div>
+																					<div
+																						class="small mb-0 " style="font-size: xx-small;"
+																					>
+																					<ul class="list-inline m-0 justify-content-center" >
+																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																						<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																					</ul>
+																				</div>
+																				</div>
+																				
+																				<div class="col price">
+																					<p class="mb-0 ">€ 44.00</p>
+																				</div>
+																				
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+												</a>
+												<a>
+													<div class="card mb-3">
+														<div class="card-body p-1">
+															<div class="row align-items-center">
+																<div class="col flex-grow-0">
+																	<img
+																		src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
+																		class="rounded-1"
+																		alt="Shopping item"
+																		style="width: 40px"
+																	/>
+																</div>
+																<div class="col m-0 p-0">
+																	<div
+																		class="card-body row align-items-center m-0 p-0"
+																	>
+																		<div
+																			class="col-sm-5 col-md-5 col-lg-3 col-xl-3 flex-grow-1 p-0"
+																		>
+																			
+																			<div
+																				class="text-black mb-0 card-title"
+																				
+																			>
+																				Samsung galaxy Note 10
+																</div>
+																			<div
+																				class="small mb-0 " style="font-size: xx-small;"
+																			>
+																			<ul class="list-inline m-0 justify-content-center" >
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																			</ul>
+																		</div>
+																		</div>
+																		
+																		<div class="col price">
+																			<p class="mb-0 ">€ 44.00</p>
+																		</div>
+																		
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+										</a>								
+														
+												
+												
+												</div>
+											</div>
 										</div>
 									</div>
 								
@@ -2139,6 +2880,8 @@ $(document).ready(function(){
 	  
 	  if ($cartIcon.hasClass("fa-cart-plus")) {
 		$cartIcon.removeClass("fa-cart-plus").addClass("fa-check");
+		onloadcartnumbers();
+
 	  } else {
 		 
 		$cartIcon.removeClass("fa-check").addClass("fa-cart-plus"); // Reset color to default

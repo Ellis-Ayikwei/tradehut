@@ -12166,12 +12166,19 @@ textarea.form-control-lg {
   }
 }
 .items-catergory-card .catcard {
+  background-image: linear-gradient(to top, #d6ddef 0%, #eef1f5 100%);
   width: auto;
+  height: auto;
   margin: 1% !important;
+  white-space: nowrap;
+}
+.items-catergory-card .catcard .card-header {
+  background-color: transparent !important;
 }
 @media (max-width: 575.98px) {
   .items-catergory-card .catcard {
     margin-right: 10vw !important;
+    margin-bottom: 10vw !important;
   }
   .items-catergory-card .catcard .card-header {
     font-size: 10px;
@@ -12184,7 +12191,8 @@ textarea.form-control-lg {
   /* For 3 columns */
   grid-template-columns: auto auto;
   width: auto;
-  height: auto;
+  height: 80%;
+  margin-bottom: 10px;
 }
 .items-catergory-card .catcard .image-grid-container .card-img-top {
   box-shadow: rgba(153, 153, 153, 0.35) 0px 5px 15px;
@@ -12198,13 +12206,26 @@ textarea.form-control-lg {
 }
 .items-catergory-card .catcard .image-grid-container img {
   width: 120px;
+  height: 120px;
   position: inherit;
+  position: inherit;
+  object-fit: scale-down;
+  display: block;
 }
 @media (max-width: 575.98px) {
   .items-catergory-card .catcard .image-grid-container img {
     width: 60px;
+    height: 60px;
     margin: auto;
   }
+}
+.items-catergory-card .catcard .image-grid-container .card-img-top:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  transform: scale(1.01);
+  transition: all 0.5s ease;
+  filter: saturate(200%);
+  filter: sepia(30%);
 }
 .items-catergory-card .card {
   /* Add shadows to create the "card" effect */
@@ -12227,12 +12248,12 @@ textarea.form-control-lg {
 .promo-card .card {
   width: 300px;
   margin: auto;
-  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   margin: 0 auto;
   float: none;
   margin-bottom: 10px;
+  padding-bottom: 10px;
   justify-content: center !important;
   color: black;
 }
@@ -12280,6 +12301,7 @@ textarea.form-control-lg {
 }
 .promo-card .card li {
   color: #f19428;
+  font-size: 12px;
 }
 .promo-card .card s {
   color: #5f5f5f;
@@ -12297,12 +12319,21 @@ textarea.form-control-lg {
   .promo-card p,
   .promo-card s,
   .promo-card b {
-    font-size: 16px !important;
+    font-size: 12px !important;
   }
   .promo-card .btn {
     font-size: 10px;
     padding: 5px;
   }
+}
+.promo-card p,
+.promo-card s {
+  font-size: 12px !important;
+}
+.promo-card b {
+  font-weight: bold !important;
+  font-family: "Montserrat";
+  font-size: 15px !important;
 }
 .promo-card h5 {
   font-weight: bold !important;
@@ -12311,22 +12342,24 @@ textarea.form-control-lg {
 .promo-card .card-img-top {
   box-shadow: rgba(153, 153, 153, 0.35) 0px 5px 15px;
   background-color: rgba(235, 235, 235, 0.3764705882);
-  border-radius: 10%;
-  width: 100%;
-  height: 100%;
-  margin: auto;
+  margin: 0;
   justify-content: center;
   align-content: center;
   position: relative;
-  padding: 5px;
+  padding: 0;
 }
 .promo-card img {
   width: 150px;
+  height: 150px;
   position: inherit;
+  position: inherit;
+  object-fit: scale-down;
+  display: block;
 }
 @media (max-width: 575.98px) {
   .promo-card img {
-    width: 100px;
+    width: 120px;
+    height: 120px;
     margin: auto;
   }
 }
@@ -12399,6 +12432,15 @@ textarea.form-control-lg {
     display: none;
   }
 }
+.Toprated .card-body {
+  font-size: 1vw;
+}
+.Toprated .card-body .list-inline-item {
+  margin: 0 !important;
+}
+.Toprated .card-body .price {
+  padding: 0;
+}
 @media (max-width: 575.98px) {
   .Toprated .card-body {
     padding: 0;
@@ -12407,14 +12449,7 @@ textarea.form-control-lg {
     margin: 0;
     text-align: center;
     font-size: 8px;
-  }
-  .Toprated .card-body a {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 5px;
-  }
-  .Toprated .card-body a li {
-    margin: 0;
+    white-space: nowrap;
   }
   .Toprated .card-body .d-flex {
     align-items: center;
@@ -12486,6 +12521,46 @@ textarea.form-control-lg {
 }
 .test .card-text {
   letter-spacing: 0.1em;
+}
+
+#form1::-webkit-inner-spin-button,
+#form1::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  display: none;
+}
+
+#form1 {
+  text-align: center;
+  width: 40px;
+  height: auto;
+  border: 3px solid blue; /* Adjust the width as needed */
+}
+
+.cart-modal .modal-content {
+  height: 90vh !important;
+}
+.cart-modal .modal-body {
+  overflow: auto;
+}
+.cart-modal .modal-footer {
+  height: 70px;
+}
+@media (max-width: 575.98px) {
+  .cart-modal .btn {
+    font-size: 10px;
+    padding: 5px;
+    align-items: center !important;
+  }
+}
+.cart-modal .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  transform: scale(1.01);
+  transition: all 0.5s ease;
+  filter: saturate(200%);
+  filter: sepia(30%);
 }
 
 @media (max-width: 320px) {
@@ -13001,6 +13076,25 @@ form .btn button:hover {
 
 .openbtn:hover {
   background-color: #444;
+}
+
+.firstnavbar {
+  align-items: center;
+}
+.firstnavbar .cart:hover {
+  text-decoration: none;
+  color: #d60e96;
+}
+.firstnavbar .cart .cart-basket {
+  font-size: 0.6rem;
+  position: absolute;
+  top: -12px;
+  right: -1px;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  background-color: #418deb;
+  border-radius: 50%;
 }
 
 .footer {
