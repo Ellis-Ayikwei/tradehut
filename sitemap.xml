@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.tradehut.shop:443/</loc>
+  <lastmod>2023-09-22T02:26:39+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/special-pages/calender.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/special-pages/kanban.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/special-pages/pricing.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/special-pages/timeline.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/auth/sign-in.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/auth/sign-up.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/auth/confirm-mail.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/auth/lock-screen.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/auth/recoverpw.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/errors/error500.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/errors/maintenance.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/admin.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/app/user-profile.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/app/user-privacy-setting.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/extra/privacy-policy.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/extra/terms-of-service.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/index-horizontal.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/index-dual-horizontal.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/index-dual-compact.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/index-boxed.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/index-boxed-fancy.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/special-pages/billing.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/special-pages/rtl-support.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/app/user-add.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/app/user-list.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/errors/error404.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/widget/widgetbasic.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/widget/widgetchart.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/widget/widgetcard.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/maps/google.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/maps/vector.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/form/form-element.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/form/form-wizard.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/form/form-validation.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/table/bootstrap-table.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/table/table-data.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/icons/solid.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/icons/outline.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tradehut.shop:443/dashboard/icons/dual-tone.html</loc>
+  <lastmod>2023-09-19T03:41:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
