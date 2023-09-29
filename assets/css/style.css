@@ -11863,8 +11863,8 @@ textarea.form-control-lg {
 }
 .btn-rounded {
   /*@include media-breakpoint-down(sm){
-      display:none
-  }*/
+         display:none
+     }*/
   position: relative;
   padding: 0.935rem 4.375rem 0.935rem 1.25rem;
   font-weight: 700;
@@ -12240,14 +12240,19 @@ textarea.form-control-lg {
 }
 
 .promo-card {
-  justify-content: center;
+  justify-content: start;
   flex-wrap: nowrap !important;
   overflow-x: auto;
   /* On mouse-over, add a deeper shadow */
 }
+@media (max-width: 767.98px) {
+  .promo-card {
+    justify-content: start;
+  }
+}
 .promo-card .card {
   width: 300px;
-  margin: auto;
+  margin: 1% !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   margin: 0 auto;
@@ -12257,9 +12262,10 @@ textarea.form-control-lg {
   justify-content: center !important;
   color: black;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .promo-card .card {
-    margin-right: 10%;
+    margin-right: 10vw !important;
+    margin-bottom: 10vw !important;
   }
 }
 .promo-card .card .alert {
@@ -12523,14 +12529,6 @@ textarea.form-control-lg {
   letter-spacing: 0.1em;
 }
 
-#form1::-webkit-inner-spin-button,
-#form1::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-  display: none;
-}
-
 #form1 {
   text-align: center;
   width: 40px;
@@ -12561,6 +12559,18 @@ textarea.form-control-lg {
   transition: all 0.5s ease;
   filter: saturate(200%);
   filter: sepia(30%);
+}
+.cart-modal .totalcartprice {
+  white-space: nowrap !important;
+  background-color: rgba(255, 216, 144, 0.4666666667);
+  align-content: center !important;
+  align-items: center !important;
+  width: 100%;
+  margin-top: 0;
+  height: auto;
+}
+.cart-modal .totalcartprice h4 {
+  text-align: end;
 }
 
 @media (max-width: 320px) {
@@ -13317,6 +13327,43 @@ form .btn button:hover {
     max-width: 1000px;
     place-items: center;
   }
+}
+
+.productbody {
+  margin-top: 10%;
+}
+@media (max-width: 575.98px) {
+  .productbody {
+    margin-top: 30%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .productbody {
+    margin-top: 20%;
+  }
+}
+.productbody table {
+  align-items: center !important;
+}
+@media (max-width: 575.98px) {
+  .productbody table {
+    display: flex;
+  }
+  .productbody table tr {
+    align-items: center;
+  }
+  .productbody table th {
+    padding-top: auto;
+    white-space: wrap;
+    border: none;
+  }
+  .productbody table td {
+    white-space: wrap;
+  }
+}
+.productbody .Similar-items {
+  height: 70vh;
+  overflow: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

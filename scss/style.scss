@@ -1,22 +1,20 @@
-
-@use 'custom';
-
+@use "custom";
 
 //import thead components
 
-@use 'components/animations';
-@use 'components/buttons';
-@use 'components/mixins';
-@use 'components/typography';
-
+@use "components/animations";
+@use "components/buttons";
+@use "components/mixins";
+@use "components/typography";
 
 //import thead sections
-@use 'sections/companies';
-@use 'sections/intro-section';
-@use 'sections/services';
-@use 'sections/testimonials';
-@use 'sections/faq';
-@use 'sections/portfolio';
-@use 'sections/navbar';
-@use 'sections/footer';
-@use 'sections/get-started';
+@use "sections/companies";
+@use "sections/intro-section";
+@use "sections/services";
+@use "sections/testimonials";
+@use "sections/faq";
+@use "sections/portfolio";
+@use "sections/navbar";
+@use "sections/footer";
+@use "sections/get-started";
+@use "sections/product-page";

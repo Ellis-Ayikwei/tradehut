@@ -1,0 +1,37 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+// the product page
+.productbody {
+	margin-top: 10%;
+	@include media-breakpoint-down(sm) {
+		margin-top: 30%;
+	}
+	@include media-breakpoint-only(md) {
+		margin-top: 20%;
+	}
+
+	table {
+		align-items: center !important;
+		@include media-breakpoint-down(sm) {
+			display: flex;
+
+			tr {
+				align-items: center;
+			}
+			th {
+				padding-top: auto;
+				white-space: wrap;
+				border: none;
+			}
+			td {
+				white-space: wrap;
+			}
+		}
+	}
+
+	.Similar-items {
+		height: 70vh;
+		overflow: auto;
+	}
+}

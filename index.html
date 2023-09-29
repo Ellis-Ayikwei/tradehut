@@ -9,7 +9,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
 		/>
-		<meta http-equiv="refresh" content="30">
+		<!-- <meta http-equiv="refresh" content="30"> -->
 		<meta name="author" content="TradeHut">
 		<meta property="TradeHut:title" content="TradeHut - Electronics Sales and Repair Services">
 <meta property="TradeHut:description" content="Find the latest gadgets and get expert repairs for your electronic devices at TradeHut.">
@@ -120,6 +120,8 @@
 <style>
 	body{
 		scroll-behavior: smooth;
+		background: #f19328d3;
+background: linear-gradient(to bottom right, #f19328c2 0%, #cf421fb2 100%);
 	}
 </style>
 
@@ -174,8 +176,10 @@
 																</p>
 															</div>
 														</div>
+
+														<div class="allcartItems">
 				
-														<div class="card mb-3">
+														<!-- <div class="card mb-3">
 															<div class="card-body">
 																<div class="row align-items-center">
 																	<div class="col flex-grow-0">
@@ -398,16 +402,19 @@
 																	</div>
 																</div>
 															</div>
-														</div>
+														</div> -->
 				
-														
+													</div>
 													</div>
 														
 												
 												</div>
 												
-													<div class="row m-3
+													<div class="row m-3 
 															">
+															<div class="totalcartprice m-3 text-right">
+																
+															</div>
 																<div class="d-flex justify-content-between">
 													
 																	<a
@@ -417,6 +424,7 @@
 																	>
 																		Continue Shopping
 																</a>
+																
 																	<button
 																		class="btn btn-primary w-50"
 																		type="submit"
@@ -1476,14 +1484,14 @@
 											<li>
 												<a
 													class="dropdown-item"
-													href="../dashboard/app/user-profile.html"
+													href="dashboard/auth/sign-in.html"
 													>Login</a
 												>
 											</li>
 											<li>
 												<a
 													class="dropdown-item"
-													href="../dashboard/app/user-privacy-setting.html"
+													href="dashboard/auth/sign-up.html"
 													>Register</a
 												>
 											</li>
@@ -1491,7 +1499,7 @@
 											<li>
 												<a
 													class="dropdown-item"
-													href="../dashboard/auth/sign-in.html"
+													href=""
 													>Conitue as a guest</a
 												>
 											</li>
@@ -1553,28 +1561,7 @@
 					
 					<nav class="nav navbar navbar-expand  second-navbar  navbar-light bg-body-secondary  fixed-top  flex-nowrap">
 						<div class="container-fluid ">
-					
-							<!-- <div
-								class="sidebar-toggler"
-								data-toggle="sidebar"
-								data-active="true"
-							>
-								<i class="fas fa-bars">
-					
-								</i>
-							</div> -->
-						
-							
-	<button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>
-							  
-	
-	
-	
-
-							  
-
-
-
+							<button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>
 							
 								<a
 									href="#"
@@ -1743,12 +1730,10 @@
 									</li>
 								</ul>
 							</div>
-						</>
+						
 					</nav>
 					
-				</header>
-				
-				
+				</header>	
 				<!-- Nav Header Component Start -->
 				<div
 					class="iq-navbar-header"
@@ -1810,13 +1795,12 @@
 					</div>
 				</div>
 				<!-- Nav Header Component End -->
-				<!--Nav End-->
-			</div>
-			
-				
-
-                
-					<div class="conatiner-fluid flex-nowrap  content-inner mt-5 py-0 tab-content " id="nav-tabContent">
+				<!--Nav End-->		
+			</div>				
+							  
+	
+	<!-- the main page items  -->
+		<div class="conatiner-fluid flex-nowrap  content-inner mt-5 py-0 tab-content " id="nav-tabContent">
 						<div
 						class="tab-pane fade show active"
 						id="nav-all"
@@ -1963,7 +1947,7 @@
 											<div class="card-body">
 												<div class="container-xl ">
 													<div class="row">
-														<div class="row m-0 promo-card ">
+														<div class="row m-0 promo-card  products-container">
 								
 															
 															<div class="card"> 
@@ -1977,11 +1961,12 @@
 																		</div>
 								
 																	
-																	</div></div>
+																	</div>
+																</div>
 																
-																	<div class="card-img-top text-center d-flex align-items-center"><img src="assets/images/phones/iphonex.png" class="mx-auto" alt="..."></div>
+																	<div class="card-img-top text-center d-flex align-items-center"><img src="images\products\electronics\iphone12.jpg" class="mx-auto" alt="..."></div>
 																	<div class="card-body  p-0">
-																		<h5 class="card-title mb-0">Apple iphone</h5>
+																		<h5 class="card-title mb-0">Apple iphone</h5><span class="item-tag">mobile phones</span>
 																		<p class="card-text"><div class="star-rating">
 																			<P class="text-muted">Lorem ipsum dolor, 
 																				sit amet consectetur adipisicing 
@@ -1998,7 +1983,7 @@
 																			</ul>
 																			
 																		</div></p>
-																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>369.00</b> <em class="badge bg-gray">save ₵20</em> </p>
+																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>600.00</b> <em class="badge bg-gray">save ₵20</em> </p>
 																				
 
 																		<div class="row align-items-center">
@@ -2035,7 +2020,220 @@
 																		<div class=" col inyourcart text-center bg-body-tertiary"><small class=" text-muted" style=" font-size: x-small;">in your cart</small></div>
 
 																	  </div>
+															</div>
+															<div class="card"> 
+																
+																<div class="card-header"><div class="row">
+																	<div class="col text-left">
+																		<p>Top Sellers</p>
+																		</div>
+																	<div class="col text-right">
+																		<span class="wish-icon"><i class="fas fa-2x fa-heart-circle-plus"></i></i></span>
+																		</div>
+								
+																	
 																	</div>
+																</div>
+																
+																	<div class="card-img-top text-center d-flex align-items-center"><img src="images\products\electronics\iphone11.jpg" class="mx-auto" alt="..."></div>
+																	<div class="card-body  p-0">
+																		<h5 class="card-title mb-0">Apple iphone x</h5><span class="item-tag">hard phones</span>
+																		<p class="card-text"><div class="star-rating">
+																			<P class="text-muted">Lorem ipsum dolor, 
+																				sit amet consectetur adipisicing 
+																				elit. Necessitatibus nam earum 
+																				voluptatem debitis recusandae 
+																				</P>
+																			<ul class="list-inline m-0">
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><span><a href="" class="mb-0"><small>55 reviews</small></a></span></li>
+																			</ul>
+																			
+																		</div></p>
+																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>36119.00</b> <em class="badge bg-gray">save ₵20</em> </p>
+																				
+
+																		<div class="row align-items-center">
+																			
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex col-sm-3">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+
+																			<div class="col text-center  add2cart cartIcons"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
+																		</div>
+																		<div class=" col inyourcart text-center bg-body-tertiary"><small class=" text-muted" style=" font-size: x-small;">in your cart</small></div>
+
+																	  </div>
+															</div>
+															<div class="card"> 
+																
+																<div class="card-header"><div class="row">
+																	<div class="col text-left">
+																		<p>Top Sellers</p>
+																		</div>
+																	<div class="col text-right">
+																		<span class="wish-icon"><i class="fas fa-2x fa-heart-circle-plus"></i></i></span>
+																		</div>
+								
+																	
+																	</div>
+																</div>
+																
+																	<div class="card-img-top text-center d-flex align-items-center"><img src="images\products\electronics\iphone12.jpg" class="mx-auto" alt="..."></div>
+																	<div class="card-body  p-0">
+																		<h5 class="card-title mb-0">Apple iphone y</h5><span class="item-tag">mobile phones</span>
+																		<p class="card-text"><div class="star-rating">
+																			<P class="text-muted">Lorem ipsum dolor, 
+																				sit amet consectetur adipisicing 
+																				elit. Necessitatibus nam earum 
+																				voluptatem debitis recusandae 
+																				</P>
+																			<ul class="list-inline m-0">
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><span><a href="" class="mb-0"><small>55 reviews</small></a></span></li>
+																			</ul>
+																			
+																		</div></p>
+																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>1000.00</b> <em class="badge bg-gray">save ₵20</em> </p>
+																				
+
+																		<div class="row align-items-center">
+																			
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex col-sm-3">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+
+																			<div class="col text-center  add2cart cartIcons"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
+																		</div>
+																		<div class=" col inyourcart text-center bg-body-tertiary"><small class=" text-muted" style=" font-size: x-small;">in your cart</small></div>
+
+																	  </div>
+															</div>
+															<div class="card"> 
+																
+																<div class="card-header"><div class="row">
+																	<div class="col text-left">
+																		<p>Top Sellers</p>
+																		</div>
+																	<div class="col text-right">
+																		<span class="wish-icon"><i class="fas fa-2x fa-heart-circle-plus"></i></i></span>
+																		</div>
+								
+																	
+																	</div>
+																</div>
+																
+																	<div class="card-img-top text-center d-flex align-items-center"><img src="images\products\electronics\mackbookpro.jpg" class="mx-auto" alt="..."></div>
+																	<div class="card-body  p-0">
+																		<h5 class="card-title mb-0">Apple iphone z</h5><span class="item-tag">mobile laps</span>
+																		<p class="card-text"><div class="star-rating">
+																			<P class="text-muted">Lorem ipsum dolor, 
+																				sit amet consectetur adipisicing 
+																				elit. Necessitatibus nam earum 
+																				voluptatem debitis recusandae 
+																				</P>
+																			<ul class="list-inline m-0">
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><span><a href="" class="mb-0"><small>55 reviews</small></a></span></li>
+																			</ul>
+																			
+																		</div></p>
+																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>36923.00</b> <em class="badge bg-gray">save ₵20</em> </p>
+																				
+
+																		<div class="row align-items-center">
+																			
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex col-sm-3">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+
+																			<div class="col text-center  add2cart cartIcons"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
+																		</div>
+																		<div class=" col inyourcart text-center bg-body-tertiary"><small class=" text-muted" style=" font-size: x-small;">in your cart</small></div>
+
+																	  </div>
+															</div>
 																</div>
 																																			
 													</div>
@@ -2043,6 +2241,7 @@
 											</div>
 										</div>
 									</div>
+									
 									<div class="row p-0">
 										<div class="card">
 											<div class="card-body banner">
@@ -2087,18 +2286,14 @@
 																		</div>
 								
 																	
-																	</div></div>
+																	</div>
+																</div>
 																
-																	<div class="card-img-top text-center d-flex align-items-center"><img src="assets/images/phones/iphonex.png" class="mx-auto" alt="..."></div>
-																	
-																	
-
-																	
-																
+																	<div class="card-img-top text-center d-flex align-items-center"><img src="images\products\electronics\mackbookpro.jpg" class="mx-auto" alt="..."></div>
 																	<div class="card-body  p-0">
-																		<h5 class="card-title mb-0">Apple iphone</h5>
+																		<h5 class="card-title mb-0">Apple laptop y</h5><span class="item-tag">laptops</span>
 																		<p class="card-text"><div class="star-rating">
-																			<P>Lorem ipsum dolor, 
+																			<P class="text-muted">Lorem ipsum dolor, 
 																				sit amet consectetur adipisicing 
 																				elit. Necessitatibus nam earum 
 																				voluptatem debitis recusandae 
@@ -2109,28 +2304,52 @@
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																				<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																				<li class="list-inline-item"><span><a href="" class="mb-0"><small>55 reviews</small></a></span></li>
 																			</ul>
-																			<p class="mb-0"><small>55 reviews</small></p>
+																			
 																		</div></p>
-																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>369.00</b> <em class="badge bg-gray">save ₵20</em> </p>
+																		<p class="item-price"><s>₵400.00</s>&nbsp; <b><sup>₵</sup>3200.00</b> <em class="badge bg-gray">save ₵20</em> </p>
 																				
 
 																		<div class="row align-items-center">
-																			<div class="col "><a href="#" class="btn btn-primary ">Buy Now</a></div>
-																			<div class="col text-center  cartIcons add2cart"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
+																			
+																			<div class="col align-items-center">
+																				<div class="col-md-3 col-lg-3 col-xl-2 d-flex col-sm-3">
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+																					>
+																						<i class="fas fa-minus"></i>
+																					</button>
+				
+																					<input
+																						id="form1"
+																						min="0"
+																						name="quantity"
+																						value="1"
+																						type="number"
+																						class="form-control form-control-sm p-1"
+																					/>
+				
+																					<button
+																						class="btn btn-link px-2"
+																						onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+																					>
+																						<i class="fas fa-plus"></i>
+																					</button>
+																				</div>
+																			</div>
+
+																			<div class="col text-center  add2cart cartIcons"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
 																		</div>
+																		<div class=" col inyourcart text-center bg-body-tertiary"><small class=" text-muted" style=" font-size: x-small;">in your cart</small></div>
+
 																	  </div>
-																	  
-																	 
-																										
-																									
 															</div>
-															
-														
-																								
-																																										
-														</div>
-													</div></div>
+																</div>
+																																			
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -2599,14 +2818,14 @@
 
 
 							</div>
-							</div>
+						</div>
 
 
 							<!-- end of Top rated -->
 
-						</div>
 					</div>
-
+					
+<!-- end of main page items  -->
 				
 <!-- the modems pane -->
 					<div
@@ -2742,40 +2961,8 @@
 					</div>
 					</div>
 						
-					</div>
-			
-					<!-- <div class="test">
-						
-						<div class="card dark">
-							<div class="card-header p-0 text-black"><div class="row">
-								<div class="col text-left">
-									<p>Top Sellers</p>
-									</div>
-								<div class="col text-right">
-									<span class="wish-icon"><i class="fas fa-2x fa-heart-circle-plus"></i></i></span>
-									</div>
-	
-								
-								</div></div>
-							<img src="images/products/electronics/elctr (3).png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<div class="text-section">
-									<h5 class="card-title fw-bold">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card's content.</p>
-								</div>
-								<div class="cta-section">
-									<div>$129.00</div>
-									
-									<div class="row align-items-center text-center">
-										<div class="col "><a href="#" class="btn btn-primary p-0 ">Buy</a></div>
-										<div class="col text-center cartIcons"><span class="cart-icon"><i class="fas fa-2x fa-cart-plus"></i></span></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> -->
 					
-					
+				
 					
 					
 					
@@ -2833,7 +3020,11 @@
 			</footer>
 			<!-- Footer Section End -->
 		</main>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+		
+		
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script>
 function openNav() {
   document.getElementById("mySidepanel").style.width = "400px";
@@ -2925,48 +3116,13 @@ $(document).ready(function(){
 
 
 
-<!-- <script>
-	
-  document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM loaded');
-	function showCardsBasedOnScreenSize() {
-      console.log('Function called');
-      const screenWidth = window.innerWidth;
-
-      // Define the breakpoint for smaller screens (e.g., 768 pixels)
-      const breakpoint = 768;
-
-      // Select all cards
-      const cards = document.querySelectorAll('.catcard');
-
-      console.log(cards);
-      // Hide all cards
-      cards.forEach(card => {
-        card.style.display = 'none';
-      });
-
-      if (screenWidth <= breakpoint) {
-        // Show only the first two cards on smaller screens
-        for (let i = 0; i < 2; i++) {
-          cards[i].style.display = 'block';
-        }
-      } else {
-        // Show all cards on larger screens
-        cards.forEach(card => {
-          card.style.display = 'block';
-        });
-      }
-    }
-
-    // Run the function initially and whenever the window is resized
-    window.addEventListener('load', showCardsBasedOnScreenSize);
-    window.addEventListener('resize', showCardsBasedOnScreenSize);
-  });
-</script> -->
-\
 <script src="carts.js">
 
 </script>
+
+
+
+
 
 		<!-- Wrapper End-->
 		<!-- offcanvas start -->
