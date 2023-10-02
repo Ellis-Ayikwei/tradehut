@@ -171,7 +171,6 @@ print_r($_SESSION['cart']);
 																	$product_name = $row['product_name'];
 																	$description = $row['description'];
 																	$price = number_format($row['price'], 2);
-																	$stockquantity = $row['stockquantity'];
 																	$category_id = $row['category_id'];
 																	$Sub_category_id = $row['Sub_category_id'];
 																	$brand_id = $row['brand_id'];
@@ -191,7 +190,7 @@ print_r($_SESSION['cart']);
 
                                         <div class="card">
                                         <form action="manage_cart.php" method="POST">
-                                        <a href="product-detail.php?product_id=<?php echo $product_id; ?>">
+                                        
 
 
                                             <div class="card-header">
@@ -207,7 +206,7 @@ print_r($_SESSION['cart']);
 
                                                 </div>
                                             </div>
-
+                                            <a href="product-detail.php?product_id=<?php echo $product_id; ?>">
                                             <div class="card-img-top text-center d-flex align-items-center food-img">
                                                 <img src="admin/<?php echo $Main_product_image?>" class="mx-auto"
                                                     alt="...">
@@ -219,6 +218,7 @@ print_r($_SESSION['cart']);
                                                 <div class="star-rating">
                                                     <P class="text-muted"><?php echo $description ?>
                                                     </P>
+                                                    </a>
                                                     <ul class="list-inline m-0">
                                                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -250,9 +250,11 @@ print_r($_SESSION['cart']);
                                                     value="<?php echo $description ?>">
                                                 <input type="hidden" name="product_id"
                                                     value="<?php echo $product_id ?>">
+                                                    <input type="hidden" name="quantity"
+                                                    value="1">
 
 
-                                                </a>
+                                                
                                             </div>
                                         </form>
                                     </div>

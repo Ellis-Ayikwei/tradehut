@@ -1,6 +1,7 @@
 <?php 
 
-include_once "connectconfig.php"
+include_once "connectconfig.php";
+include "header2.php";
 
 
 ?>
@@ -151,7 +152,8 @@ if (isset($_GET['product_id'])) {
                     <div class="row gx-5">
                         <aside class="col-lg-6">
                             <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                                <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="<?php ?>">
+                                <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" 
+                                href="admin/<?php  echo $Main_product_image?>">
                                     <img style="max-width: 100%; max-height: 60vh; margin: auto;" class="rounded-4 fit"
                                         src="admin/<?php  echo $Main_product_image?>">
                                 </a>
@@ -343,11 +345,17 @@ if (isset($_GET['product_id'])) {
                                             role="tab" aria-controls="ex1-pills-3" aria-selected="false">Shipping
                                             info</a>
                                     </li>
+                                 
                                     <li class="nav-item d-flex" role="presentation">
                                         <a class="nav-link d-flex align-items-center justify-content-center w-100"
                                             id="Seller-profile-tab" data-bs-toggle="pill" href="#Seller-profile"
                                             role="tab" aria-controls="ex1-pills-4" aria-selected="false">Seller
                                             profile</a>
+                                    </li>
+                                    <li class="nav-item d-flex" role="presentation">
+                                        <a class="nav-link d-flex align-items-center justify-content-center w-100"
+                                            id="Return-Policy-tab" data-bs-toggle="pill" href="#Return-Policy"
+                                            role="tab" aria-controls="ex1-pills-5" aria-selected="false">Return Policy</a>
                                     </li>
                                 </ul>
                                 <!-- Pills navs -->
@@ -441,6 +449,17 @@ if (isset($_GET['product_id'])) {
                                     </div>
                                     <div class="tab-pane fade mb-2" id="Seller-profile" role="tabpanel"
                                         aria-labelledby="Seller-profile-tab">
+                                        Some other tab content or sample information now <br />
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="tab-pane fade mb-2" id="Return-Policy" role="tabpanel"
+                                        aria-labelledby="Retun-Policy-tab">
                                         Some other tab content or sample information now <br />
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

@@ -41,6 +41,9 @@ require_once "addproductsback.php";
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     </head>
 
@@ -73,15 +76,18 @@ require_once "addproductsback.php";
                     <option value="">Select a subcategory</option>
                     <!-- Subcategories will be populated dynamically based on the selected category -->
                 </select>
+                <input type="hidden" name="selected_subcategory_id" id="selectedSubcategoryID">
+                <input type="hidden" name="selected_subcategory_name" id="selectedSubcategoryname">
 
-
-                <label for="subcategorySelect">Brand</label>
+                <label for="brandSelect">Brand</label>
                 <select name="brand_id" id="brandselect">
                     <option value="">Select a Brand</option>
                 </select>
 
                 
 <div class="attrib">
+
+
     
     
                 <div id="attributeContainer">
@@ -145,6 +151,176 @@ require_once "addproductsback.php";
 </form>
 
 
+<form action="" method="POST" enctype="multipart/form-data">
+            <label for="product_name">Product Name:</label>
+            <input type="text" name="product_name" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea name="description" rows="4" required></textarea><br><br>
+
+            <label for="price">Price:</label>
+            <input type="text" name="price" required><br><br>
+
+            <label for="stockquantity">Stock Quantity:</label>
+            <input type="number" name="stockquantity" required><br><br>
+
+            <form id="productForm" method="POST">
+                <label for="categorySelect">Category:</label>
+                <select name="category_id" id="categorySelect" required>
+                    <option value="">Select a category</option>
+                    <!-- Categories will be populated dynamically -->
+                </select>
+
+                <br>
+
+                <label for="subcategorySelect">Subcategory:</label>
+                <select name="subcategory_id" id="subcategorySelect" required>
+                    <option value="">Select a subcategory</option>
+                    <!-- Subcategories will be populated dynamically based on the selected category -->
+                </select>
+                <input type="hidden" name="selected_subcategory_id" id="selectedSubcategoryID">
+                <input type="hidden" name="selected_subcategory_name" id="selectedSubcategoryname">
+
+                <label for="brandSelect">Brand</label>
+                <select name="brand_id" id="brandselect">
+                    <option value="">Select a Brand</option>
+                </select>
+
+                
+<div class="attrib">
+
+
+    
+    
+                <div id="attributeContainer">
+                    <h3>attri 1</h3>
+                    <div class="attribute-row">
+                        <label for="attributeSelect">Attributes:</label>
+                        <select name="attribute_id" class="attributeSelect" required>
+                            <option value="">Select an attribute</option>
+                            <!-- ... (options for attributes) ... -->
+                        </select>
+    
+                        <label for="attribute_valuesSelect">Attribute Values:</label>
+                        <select name="value_id" class="attribute_valuesSelect" required>
+                            <option value="">Select an attribute_value</option>
+                            <!-- ... (options for attribute values) ... -->
+                        </select>
+    
+                        <!-- Add a "minus" button to remove the cloned node -->
+                    </div>
+    
+                </div>
+                <button id="addAttributeButton">+</button> </div>
+                <!-- Add a "plus" button to add more dropdowns -->
+</div>
+
+<div class="container-fluid mt-5">
+        
+
+
+
+        <table class="table table-bordered mt-4">
+        <thead class="thead-dark">
+            <tr>
+            <h>
+                    <select class="form-control">
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+</h>
+                <th>sku</th>
+                <th>Color</th>
+                <th>Size</th>
+               
+             
+                <th>
+                    <button class="btn btn-success clone-button" onclick="cloneHeaderColumn()">
+                        <i class="fas fa-plus"></i> Clone Column
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample product data (you can dynamically add rows using a backend script) -->
+            <tr class="product-row">
+                <td>
+                    <label for="name">Name:</label><br>
+                    <input type="input" name="price" value=""><br><br>
+                </td>
+                <td>
+                    <select class="form-control">
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Green">Green</option>
+                        <!-- Add more color options as needed -->
+                    </select>
+                </td>
+                <!-- Add more columns with dropdowns as needed -->
+                <td>
+                    <select class="form-control">
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                </td>
+               
+                <td>
+                    <button class="btn btn-success clone-button btn-sm" onclick="cloneRow(this)">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" onclick="cloneRow(this)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" onclick="cloneRow(this)">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Include Bootstrap JS and jQuery for dropdown functionality -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to clone the last column in the table head
+        function cloneHeaderColumn() {
+            const tableHead = document.querySelector("thead tr");
+            const lastHeader = tableHead.lastElementChild;
+            const clonedHeader = lastHeader.cloneNode(true);
+            tableHead.appendChild(clonedHeader);
+        }
+
+        // Function to clone a product row with buttons
+        function cloneRow(button) {
+            const productRow = button.closest("tr.product-row");
+            const clonedRow = productRow.cloneNode(true);
+            document.querySelector("tbody").appendChild(clonedRow);
+        }
+    </script>
+
+        <input type="submit" value="Upload">
+    </div>
+
+    <script>
+        function cloneRow(button) {
+            const productRow = button.closest(".product-row");
+            const clonedRow = productRow.cloneNode(true);
+
+            // Clear input values in the cloned row
+            const inputFields = clonedRow.querySelectorAll("input");
+            inputFields.forEach((input) => {
+                input.value = "";
+            });
+
+            // Append the cloned row after the original row
+            productRow.parentNode.insertBefore(clonedRow, productRow.nextSibling);
+        }
+    </script>
            
 
 
@@ -278,34 +454,25 @@ require_once "addproductsback.php";
 
             // Add a click event listener to the "plus" button to add new attribute dropdowns
             addAttributeButton.addEventListener('click', addAttributeDropdowns);
+
+            // Add an event listener to the subcategorySelect dropdown
+subcategorySelect.addEventListener('change', function () {
+    const selectedSubcategoryId = subcategorySelect.value;
+
+    const selectedOption = subcategorySelect.selectedOptions[0]; // Get the selected option
+    const selectedSubcategoryname = selectedOption.textContent;
+
+    document.getElementById('selectedSubcategoryID').value = selectedSubcategoryId;
+    document.getElementById('selectedSubcategoryname').value = selectedSubcategoryname;
+});
+
             </script>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <script>
+<script>
             document.addEventListener("DOMContentLoaded", function() {
                 const categorySelect = document.getElementById('categorySelect');
                 const subcategorySelect = document.getElementById('subcategorySelect');
@@ -409,6 +576,27 @@ require_once "addproductsback.php";
                 populateCategories();
             });
             </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
 
 

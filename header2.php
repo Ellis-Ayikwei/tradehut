@@ -1396,6 +1396,14 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link" id="mail-drop" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="true">
+                                            Track Order
+                                            <span class="bg-primary count-mail"></span>
+                                        </a>
+
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" id="mail-drop" data-bs-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">
                                             All Products
                                             <span class="bg-primary count-mail"></span>

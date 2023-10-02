@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $itemName = $values['Item_Name'];
                         $Price = $values['Price'];
                         $Quantity = $values['Quantity'];
+                        
                         mysqli_stmt_bind_param($stmt, "iisdis", $orderID, $product_id, $itemName, $Price, $Quantity, $sub_total);
                         mysqli_stmt_execute($stmt);
                     }
