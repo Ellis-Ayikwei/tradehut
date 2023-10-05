@@ -390,16 +390,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         elements[i].closest("tr").style.display = "table-row";
                     }
                 }
-
-                // Event listener for category selection
-                const categorySelect = document.querySelector('select[name="category_id"]');
-                categorySelect.addEventListener("change", function() {
-                    const selectedCategoryID = categorySelect.value;
-                    updateVariantFields(selectedCategoryID);
-                });
-            });
-            </script>
-
-    </body>
-
-</html>
