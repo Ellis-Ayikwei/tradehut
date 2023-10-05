@@ -24,7 +24,7 @@ if ($subCategoryStmt) {
         }
 
         // Query to retrieve brands for the selected category
-        $brandQuery = "SELECT brand_id, BrandName FROM brands WHERE CategoryID = ?";
+        $brandQuery = "SELECT brand_id, brand_name FROM brands WHERE CategoryID = ?";
         $brandStmt = mysqli_prepare($conn, $brandQuery);
 
         if ($brandStmt) {

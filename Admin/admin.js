@@ -1,231 +1,339 @@
 
-
-/**
- * Function to open a common modal with specific content.
- *
- * @param {string} modalTitle - The title of the modal.
- * @param {string} inputLabel - The label for the input field in the modal.
- */
- 
-/**
- * Function to add a new input field dynamically.
- */
- 
-/**
- * Function to clone a table row when a button is clicked.
- *
- * @param {HTMLElement} button - The button element that triggers the action.
- */
- 
-/**
- * Function to delete a table row when a button is clicked.
- *
- * @param {HTMLElement} button - The button element that triggers the action.
- */
- 
-/**
- * Function to handle changes in a file input field and update the image preview.
- *
- * @param {HTMLElement} input - The input field element.
- * @param {HTMLElement} preview - The image preview element.
- */
- 
-/**
- * Function to fetch data from the server and populate the colors dropdown menu.
- */
- 
-/**
- * Function to fetch data from the server and populate the material dropdown menu.
- */
- 
-/**
- * Function to fetch data from the server and populate the memory dropdown menu.
- */
- 
-/**
- * Function to fetch data from the server and populate the speed dropdown menu.
- */
- 
-/**
- * Function to fetch data from the server and populate the size dropdown menu.
- */
- 
-/**
- * Function to fetch attribute data from the server and populate the attribute dropdown menus.
- *
- * @param {HTMLElement} attributeSelect - The attribute dropdown element.
- */
- 
-/**
- * Function to fetch attribute values based on the selected attribute and populate the attribute values dropdown menu.
- *
- * @param {HTMLElement} attributeSelect - The attribute dropdown element.
- * @param {HTMLElement} attributeValuesSelect - The attribute values dropdown element.
- */
- 
-/**
- * Function to add new attribute dropdown menus dynamically.
- */
- 
-/**
- * Function to remove a cloned attribute row when a button is clicked.
- *
- * @param {HTMLElement} button - The button element that triggers the action.
- */
- 
-/**
- * Function to update the subcategories dropdown menu based on the selected category.
- */
- 
-/**
- * Function to update the brands dropdown menu based on the selected category.
- */
- 
  
 
-// Add similar event listeners for other buttons as needed
+let modalSubmitListener = null;
 
+function openCommonModal(params) {
+    const modal = document.getElementById("commonModal");
+    const modalTitleElement = document.getElementById("modalTitle");
+    const modalInputLabel = document.getElementById("modalInputLabel");
+    const modalInput = document.getElementById("modalInput");
+    const modalSubmit = document.getElementById("modalSubmit");
 
-// Add similar event listeners for other buttons as needed
+    modalTitleElement.textContent = params.modalTitle;
+    modalInputLabel.textContent = params.inputLabel;
+    modalInput.placeholder = params.inputLabel;
+    modalInput.name = params.inputName;
 
-// Add similar event listeners for other buttons as needed
+    // Remove the previous event listener, if it exists
+    if (modalSubmitListener) {
+        modalSubmit.removeEventListener("click", modalSubmitListener);
+    }
 
+    // Define the event listener for the submit button
+    modalSubmitListener = () => {
+        const inputData = modalInput.value;
 
+        const formData = new FormData();
+        formData.append("data", inputData);
+        formData.append("inputname", params.inputName);
+        formData.append("mainCategoryID", params.mainCategoryID);
 
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const inputContainer = document.getElementById('inputContainer');
-            const addInputButton = document.getElementById('addInput');
-
-            // Function to add a new input field
-            function addInputField() {
-                const inputDiv = document.createElement('div');
-                inputDiv.innerHTML = `
-                    <label for="itemInput">Enter items</label>
-                    <input type="text" class="itemInput" name="itemInput[]" required>
-                    
-                    <button type="button" class="removeInput"><i class="fas fa-trash"></i></button>
-                `;
-
-                inputContainer.appendChild(inputDiv);
-
-                // Add a click event listener to the "Remove" button
-                const removeInputButton = inputDiv.querySelector('.removeInput');
-                removeInputButton.addEventListener('click', function () {
-                    inputContainer.removeChild(inputDiv);
-                });
-            }
-
-            // Add a click event listener to the "Add Input" button
-            addInputButton.addEventListener('click', addInputField);
+        console.log("Submitting form...");
+        fetch(params.serverScriptURL, {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Server response:", data);
+            $(modal).modal("hide");
+            $(modal).on("hidden.bs.modal", function () {
+                modalInput.value = ''; // Clear the input field
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
         });
+    };
 
+    // Attach the event listener to the submit button
+    modalSubmit.addEventListener("click", modalSubmitListener);
 
-
-
-
-
-         
-
-
-
-    function cloneRow(button) {
-    const productRow = button.closest(".productadd");
-    const clonedRow = productRow.cloneNode(true);
-
-    // Clear input values in the cloned row
-    const inputFields = clonedRow.querySelectorAll("input");
-    inputFields.forEach((input) => {
-        input.value = "";
-    });
-
-    // Clear the file input in the cloned row
-    const fileInput = clonedRow.querySelector(".profile-image-input");
-    fileInput.value = "";
-
-    // Clear the image preview in the cloned row
-    const imagePreview = clonedRow.querySelector(".profile-preview");
-    imagePreview.src = ""; // Set a default image source
-
-    // Append the cloned row after the original row
-    productRow.parentNode.insertBefore(clonedRow, productRow.nextSibling);
-
-    // Reattach the event listener for the file input in the cloned row
-    handleProfileImageChange(fileInput, imagePreview);
+    // Open the modal
+    $(modal).modal("show");
 }
 
+let   catselect = '';
 
-function deleteRow(button) {
-    const rowToDelete = button.closest(".productadd"); // Find the closest table row (tr) containing the button.
-    rowToDelete.parentNode.removeChild(rowToDelete); // Remove the found row.
+function handleCategorySelect() {
+    catselect = this.value;
 }
 
-    // Function to handle file input changes
- // This function handles changes in a file input field for profile images and updates the preview.
-function handleProfileImageChange(input, preview) {
-    // Add an event listener to the input field for changes (i.e., when a new file is selected).
-    input.addEventListener("change", function () {
-        // Get the selected file from the input field.
-        const file = input.files[0];
+// Add event listener to category select
+const categorySelect = document.getElementById("categorySelect");
+categorySelect.addEventListener('change', handleCategorySelect);
 
-        // Check if a file has been selected (not undefined).
-        if (file) {
-            // Create a new FileReader object to read the selected file.
-            const reader = new FileReader();
+document.querySelector("#add_brand").addEventListener("click", () => {
+    if (!catselect) { 
+        alert("Please select a catergory first!");
+    } else {
+        openCommonModal({
+            modalTitle: "Add Brand",
+            inputLabel: "Brand Name:",
+            inputName: "category_name",
+            mainCategoryID: catselect,
+            serverScriptURL: "add_brands.php",
+        });
+    }
+});
 
-            // When the FileReader has loaded the file (after reading it), this function will be called.
-            reader.onload = function (e) {
-                // Set the 'src' attribute of the 'preview' element to the data URL of the loaded file.
-                // This will display the selected image in the 'preview' element.
-                preview.src = e.target.result;
-            };
 
-            // Start reading the selected file as a data URL.
-            reader.readAsDataURL(file);
-        }
+document.querySelector("#add_category").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Category",
+        inputLabel: "Category Name:",
+        inputname: "category_name",
+        serverScriptURL: "add_categories.php",
     });
+});
+
+document.querySelector("#add_sub_category").addEventListener("click", () => {
+    if (!catselect) { 
+        alert("Please select a catergory first!");
+    } else {
+        openCommonModal({
+            modalTitle: "Add Subcategory",
+            inputLabel: "Subcategory Name:",
+            mainCategoryID: catselect,
+            otherParam1: "Value1",
+            otherParam2: "Value2",
+            serverScriptURL: "add_subcategories.php",
+        });
+    }
+});
+
+document.querySelector("#colorsSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Color",
+        inputLabel: "Color Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_colors.php",
+    });
+});
+
+document.querySelector("#sizeSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Size",
+        inputLabel: "Size Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_sizes.php",
+    });
+});
+
+document.querySelector("#speedSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Speed",
+        inputLabel: "Speed Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_speeds.php",
+    });
+});
+
+document.querySelector("#memorySelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Memory",
+        inputLabel: "Memory Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_memory.php",
+    });
+});
+
+document.querySelector("#materialSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Material",
+        inputLabel: "Material Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_materials.php",
+    });
+});
+
+
+
+// ...
+
+document.querySelector("#typeSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Type",
+        inputLabel: "Type Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_types.php",
+    });
+});
+
+document.querySelector("#weightSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Weight",
+        inputLabel: "Weight Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_weights.php",
+    });
+});
+
+document.querySelector("#generationSelectButton").addEventListener("click", () => {
+    openCommonModal({
+        modalTitle: "Add Generation",
+        inputLabel: "Generation Name:",
+        mainCategoryID: catselect,
+        serverScriptURL: "add_generations.php",
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function handleImageUpload(input, previewId) {
+    const preview = document.getElementById(previewId);
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = ""; // Clear the preview if no file is selected
+    }
 }
 
-
-    // Call the function for the original profile image input
-    const originalProfileImageInputs = document.querySelectorAll(".profile-image-input");
-    const originalProfileImagePreviews = document.querySelectorAll(".profile-preview");
-    originalProfileImageInputs.forEach((input, index) => {
-        handleProfileImageChange(input, originalProfileImagePreviews[index]);
-    });
-
-
-
-
+function handleVideoUpload(input, previewId) {
+    const preview = document.getElementById(previewId);
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = ""; // Clear the preview if no file is selected
+    }
+}
 
 
     
+
+
 
         
 
        
-        function deleteRow(button) {
-    const productRow = button.closest("tr");
-    productRow.parentNode.removeChild(productRow);
-        }
+function deleteimageRow(button) {
+    // Find the closest parent section with class "variant-section"
+    const variantSection = button.closest(".variant-section");
+
+    if (variantSection) {
+        // Remove the entire variant section
+        variantSection.parentNode.removeChild(variantSection);
+
+        console.log("Variant section deleted successfully.");
+    } else {
+        console.log("Error: Unable to find the parent variant section.");
+    }
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const inputContainer = document.getElementById('inputContainer');
+    const addInputButton = document.getElementById('addInput');
+
+    // Function to clone the input field container
+    function cloneInputContainer() {
+        const inputDiv = inputContainer.querySelector('.input-field');
+        const clonedInputDiv = inputDiv.cloneNode(true);
+
+        // Clear the input value in the cloned container
+        const inputField = clonedInputDiv.querySelector('.itemInput');
+        inputField.value = '';
+
+        // Add a click event listener to the "Remove" button in the cloned container
+        const removeInputButton = clonedInputDiv.querySelector('.removeInput');
+        removeInputButton.addEventListener('click', function() {
+            inputContainer.removeChild(clonedInputDiv);
+        });
+
+        inputContainer.appendChild(clonedInputDiv);
+    }
+
+    // Add a click event listener to the "Add Input" button
+    addInputButton.addEventListener('click', cloneInputContainer);
+});
+
 
 
         function clonevariantRow(button) {
-    const productRow = button.closest(".variants");
-    const clonedRow = productRow.cloneNode(true);
+            console.log('clicked')
+            // Find the closest parent section with class "variant-section"
+            const variantSection = button.closest(".variant-section");
+        
+            if (variantSection) {
+                // Clone the entire variant section (including its contents)
+                const clonedSection = variantSection.cloneNode(true);
+        
+                // Clear input values in the cloned section
+                const inputFields = clonedSection.querySelectorAll("input");
+                inputFields.forEach((input) => {
+                    input.value = "";
+                });
+        
+                // Clear the image and video previews in the cloned section (if they exist)
+                const imagePreviews = clonedSection.querySelectorAll(".profile-preview");
+                imagePreviews.forEach((preview) => {
+                    preview.src = ""; // Set a default image source or clear it
+                });
+        
+                const videoPreviews = clonedSection.querySelectorAll(".video-preview");
+                videoPreviews.forEach((preview) => {
+                    preview.src = ""; // Clear the video source
+                });
+        
+                // Append the cloned section after the original section
+                variantSection.parentNode.insertBefore(clonedSection, variantSection.nextSibling);
+        
+                console.log("Variant section cloned successfully.");
+            } else {
+                console.log("Error: Unable to find the parent variant section.");
+            }
+        }
+        
 
-    // Clear input values in the cloned row
-    const inputFields = clonedRow.querySelectorAll("input");
-    inputFields.forEach((input) => {
-        input.value = "";
-    });
 
-    // Append the cloned row after the original row
-    productRow.parentNode.insertBefore(clonedRow, productRow.nextSibling);
 
-    // Add a "trash" button to remove the cloned row
-    
-    };
+
 
 
     
@@ -265,7 +373,7 @@ fetch('get_colors.php')
 
         // Add color options obtained from the fetched data
         data.colors.forEach(color => {
-            const option = new Option(color.value_name, color.color_id);
+            const option = new Option(color.value_name, color.value_name);//this can later be changed to Option(color.value_name, color.color_id);
             colorsSelect.appendChild(option);
         });
     })
@@ -276,7 +384,6 @@ fetch('get_colors.php')
 populateColors();
 });
 
-// Function to clone the color dropdown
 
 
 
@@ -306,7 +413,7 @@ fetch('get_material.php')
 
         // Add material options obtained from the fetched data
         data.materials.forEach(material => {
-            const option = new Option(material.value_name, material.Material_id);
+            const option = new Option(material.value_name, material.value_name);
             materialSelect.appendChild(option);
         });
     })
@@ -316,6 +423,123 @@ fetch('get_material.php')
 
 populatematerial();
 });
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    function populategeneration() {
+    console.log('Fetching generation...'); // Debugging
+    // Get a reference to the generationSelect dropdown
+    const generationSelect = document.getElementById('generationSelect');
+    
+    // Make an AJAX request to fetch generation from 'get_generation.php'
+    fetch('get_generation.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('generation fetched:', data); // Debugging
+            // Clear existing options
+            generationSelect.innerHTML = '';
+    
+            // Add a default "Select a generation" option
+            const defaultgenerationOption = new Option('Select a generation', '');
+            generationSelect.appendChild(defaultgenerationOption);
+    
+            // Add generation options obtained from the fetched data
+            data.generations.forEach(generation => {
+                const option = new Option(generation.value_name, generation.value_name);
+                generationSelect.appendChild(option);
+            });
+        })
+       
+    }
+    
+    
+    populategeneration();
+    });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    function populateweight() {
+    console.log('Fetching weight...'); // Debugging
+    // Get a reference to the weightSelect dropdown
+    const weightSelect = document.getElementById('weightSelect');
+    
+    // Make an AJAX request to fetch weight from 'get_weight.php'
+    fetch('get_weight.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('weight fetched:', data); // Debugging
+            // Clear existing options
+            weightSelect.innerHTML = '';
+    
+            // Add a default "Select a weight" option
+            const defaultweightOption = new Option('Select a weight', '');
+            weightSelect.appendChild(defaultweightOption);
+    
+            // Add weight options obtained from the fetched data
+            data.weights.forEach(weight => {
+                const option = new Option(weight.value_name, weight.value_name);
+                weightSelect.appendChild(option);
+            });
+        })
+       
+    }
+    
+    
+    populateweight();
+    });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    function populatetype() {
+    console.log('Fetching type...'); // Debugging
+    // Get a reference to the typeSelect dropdown
+    const typeSelect = document.getElementById('typeSelect');
+    
+    // Make an AJAX request to fetch type from 'get_type.php'
+    fetch('get_type.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('type fetched:', data); // Debugging
+            // Clear existing options
+            typeSelect.innerHTML = '';
+    
+            // Add a default "Select a type" option
+            const defaulttypeOption = new Option('Select a type', '');
+            typeSelect.appendChild(defaulttypeOption);
+    
+            // Add type options obtained from the fetched data
+            data.types.forEach(type => {
+                const option = new Option(type.value_name, type.value_name);
+                typeSelect.appendChild(option);
+            });
+        })
+       
+    }
+    
+    
+    populatetype();
+    });
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -344,7 +568,7 @@ fetch('get_memory.php')
 
         // Add memory options obtained from the fetched data
         data.memorys.forEach(memory => {
-            const option = new Option(memory.value_name, memory.Memory_id);
+            const option = new Option(memory.value_name, memory.value_name);
             memorySelect.appendChild(option);
         });
     })
@@ -384,7 +608,7 @@ fetch('get_speed.php')
 
         // Add speed options obtained from the fetched data
         data.speeds.forEach(speed => {
-            const option = new Option(speed.value_name, speed.Speed_id);
+            const option = new Option(speed.value_name, speed.value_name);
             speedSelect.appendChild(option);
         });
     })
@@ -424,7 +648,7 @@ fetch('get_size.php')
 
         // Add size options obtained from the fetched data
         data.sizes.forEach(size => {
-            const option = new Option(size.value_name, size.Size_id);
+            const option = new Option(size.value_name, size.value_name);
             sizeSelect.appendChild(option);
         });
     })
@@ -434,149 +658,20 @@ fetch('get_size.php')
 
 populatesize();
 });
-// Call the function to populate colors for the initial dropdown when the page loads
 
 
 
-            // Function to fetch and populate attributes in a dropdown
-            function populateAttributes(attributeSelect) {
-                // Make an AJAX request to fetch attributes from 'get_attributes.php'
-                fetch('get_attributes.php')
-                    .then(response => response.json()) // Parse the response as JSON
-                    .then(data => {
-                        // Clear the existing options in the attributeSelect dropdown
-                        attributeSelect.innerHTML = '';
 
-                        // Add a default "Select an attribute" option
-                        const defaultAttributeOption = document.createElement('option');
-                        defaultAttributeOption.value = '';
-                        defaultAttributeOption.text = 'Select an attribute';
-                        attributeSelect.appendChild(defaultAttributeOption);
 
-                        // Add attribute options obtained from the fetched data
-                        data.attributes.forEach(attribute => {
-                            const option = document.createElement('option');
-                            option.value = attribute.attribute_id;
-                            option.text = attribute.attribute_name;
-                            attributeSelect.appendChild(option);
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error fetching attributes:', error);
-                    });
-            }
 
-            // Function to fetch and populate attribute values in a dropdown
-            function populateAttributeValues(attributeSelect, attributeValuesSelect) {
-                const selectedAttributeId = attributeSelect.value;
 
-                // Make an AJAX request to fetch attribute values for the selected attribute
-                fetch('get_attribute_values.php?attribute_id=' + selectedAttributeId)
-                    .then(response => response.json()) // Parse the response as JSON
-                    .then(data => {
-                        // Clear the existing options in the attributeValuesSelect dropdown
-                        attributeValuesSelect.innerHTML = '';
 
-                        // Add a default "Select an attribute_value" option
-                        const defaultAttributeOption = document.createElement('option');
-                        defaultAttributeOption.value = '';
-                        defaultAttributeOption.text = 'Select an attribute_value';
-                        attributeValuesSelect.appendChild(defaultAttributeOption);
 
-                        // Add attribute value options obtained from the fetched data
-                        data.attribute_values.forEach(attributevalue => {
-                            const option = document.createElement('option');
-                            option.value = attributevalue.value_id;
-                            option.text = attributevalue.value_name;
-                            attributeValuesSelect.appendChild(option);
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error fetching attribute values:', error);
-                    });
-            }
 
-            // Function to handle change events for attribute selection
-            function handleAttributeChange(attributeSelect, attributeValuesSelect) {
-                // Add a change event listener to the attributeSelect dropdown
-                attributeSelect.addEventListener('change', function() {
-                    // When the selection changes, call the function to populate attribute values
-                    populateAttributeValues(attributeSelect, attributeValuesSelect);
-                });
-            }
 
-            document.addEventListener("DOMContentLoaded", function() {
-                // Get references to the attributeSelect and attributeValuesSelect dropdowns
-                const attributeSelect = document.getElementsByClassName('attributeSelect');
-                // const attributeValuesSelect = document.getElementsByClassName('attribute_valuesSelect');
-                const colorsSelect = document.getElementById('colorsSelect');
 
-                // Get references to the initial attributeSelect and attributeValuesSelect dropdowns
-                const initialAttributeSelect = document.querySelector('.attributeSelect');
-                const initialValueSelect = document.querySelector('.attribute_valuesSelect');
-
-                // Initialize attribute dropdowns with data
-                populateAttributes(attributeSelect);
-                populateAttributes(initialAttributeSelect);
-                populateColors(colorsSelect) ;
-                // Add change event listeners to handle attribute selection changes
-                // handleAttributeChange(attributeSelect, attributeValuesSelect);
-                handleAttributeChange(initialAttributeSelect, initialValueSelect);
-            });
-
-            // Function to add new attribute dropdowns
-            function addAttributeDropdowns() {
-                // Clone the existing attribute dropdowns within the '.attribute-row' container
-                const clonedAttributeDropdowns = attributeContainer.querySelector('.attribute-row')
-                    .cloneNode(true);
-
-                // Clear the selected values in the cloned dropdowns
-                const clonedAttributeSelect = clonedAttributeDropdowns.querySelector('.attributeSelect');
-                const clonedAttributeValuesSelect = clonedAttributeDropdowns.querySelector('.attribute_valuesSelect');
-                clonedAttributeSelect.selectedIndex = 0;
-                clonedAttributeValuesSelect.selectedIndex = 0;
-
-                // Append the cloned dropdowns to the attributeContainer
-                attributeContainer.appendChild(clonedAttributeDropdowns);
-
-                // Add a "minus" button to remove the cloned node
-                const removeButton = document.createElement('button');
-                removeButton.textContent = '-';
-                removeButton.className = 'removeAttributeButton'; // Add a class for easier selection
-                removeButton.onclick = function() {
-                    // When the remove button is clicked, call the function to remove the cloned row
-                    removeAttributeRow(this);
-                };
-                clonedAttributeDropdowns.appendChild(removeButton);
-
-                // Add change event listeners to handle attribute selection changes in the cloned dropdowns
-                handleAttributeChange(clonedAttributeSelect, clonedAttributeValuesSelect);
-            }
-
-            // Function to remove the cloned attribute row
-            function removeAttributeRow(button) {
-                const attributeRow = button.parentElement;
-                // Remove the cloned attribute row from the attributeContainer
-                attributeContainer.removeChild(attributeRow);
-            }
-
-            // Get references to the attributeContainer and addAttributeButton
-            const attributeContainer = document.getElementById('attributeContainer');
-            const addAttributeButton = document.getElementById('addAttributeButton');
-
-            // Add a click event listener to the "plus" button to add new attribute dropdowns
-            addAttributeButton.addEventListener('click', addAttributeDropdowns);
-
-            // Add an event listener to the subcategorySelect dropdown
-            subcategorySelect.addEventListener('change', function () {
-                const selectedSubcategoryId = subcategorySelect.value;
-
-                const selectedOption = subcategorySelect.selectedOptions[0]; // Get the selected option
-                const selectedSubcategoryname = selectedOption.textContent;
-
-                document.getElementById('selectedSubcategoryID').value = selectedSubcategoryId;
-                document.getElementById('selectedSubcategoryname').value = selectedSubcategoryname;
-            });
+            
+         
 
 
 
@@ -619,6 +714,8 @@ populatesize();
                         });
                 }
 
+                
+
                 // Function to update subcategories based on the selected category
                 function updateSubcategories() {
                     const selectedCategoryId = categorySelect.value;
@@ -643,11 +740,15 @@ populatesize();
                                 option.text = subcategory.Sub_category_name;
                                 subcategorySelect.appendChild(option);
                             });
+
+                    
                         })
                         .catch(error => {
                             console.error('Error fetching subcategories:', error);
                         });
                 }
+
+
 
 
                 function updateBrands() {
@@ -671,7 +772,7 @@ populatesize();
                             data.brands.forEach(brand => {
                                 const option = document.createElement('option');
                                 option.value = brand.brand_id;
-                                option.text = brand.BrandName;
+                                option.text = brand.brand_name;
                                 brandSelect.appendChild(option);
                             });
                         })
@@ -692,6 +793,50 @@ populatesize();
                 // Populate categories when the page loads
                 populateCategories();
                 populateColors();
-                
+
+
+
+
+              
+
+
             });
 
+            document.addEventListener("DOMContentLoaded", function () {
+
+                alert("DOM is ready");
+                
+                const subcategorySelect = document.getElementById('subcategorySelect');
+            
+                subcategorySelect.addEventListener('change', function () {
+                    const selectedSubcategoryId = subcategorySelect.value;
+            
+                    // Get the selected option (text content)
+                    const selectedOption = subcategorySelect.selectedOptions[0];
+                    const selectedSubcategoryname = selectedOption.textContent;
+            
+                    // Update the hidden input fields with the selected subcategory ID and name
+                    document.getElementById('selectedSubcategoryID').value = selectedSubcategoryId;
+                    document.getElementById('selectedSubcategoryname').value = selectedSubcategoryname;
+
+                    // Get all elements with the class 'selectedSubcategoryID'
+const selectedSubcategoryIDElements = document.querySelectorAll('#selectedSubcategoryID');
+
+// Set the same value for all selectedSubcategoryID elements
+selectedSubcategoryIDElements.forEach(element => {
+    element.value = selectedSubcategoryId;
+});
+
+// Get all elements with the class 'selectedSubcategoryname'
+const selectedSubcategorynameElements = document.querySelectorAll('#selectedSubcategoryname');
+
+// Set the same value for all selectedSubcategoryname elements
+selectedSubcategorynameElements.forEach(element => {
+    element.value = selectedSubcategoryname;
+});
+
+                });
+            
+                
+            });
+            

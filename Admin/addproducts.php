@@ -1,392 +1,216 @@
-<?php 
-require_once "con2.php";
-?>
-<?php 
-require_once "addproductsback.php";
-?>
-
 <?php
 
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once "con2.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the product name from the form
-    $productName = $_POST["product_name"];
-
-    // Extract the first three letters of the product name
-    $firstThreeLetters = substr($productName, 0, 3);
-
-    // Now you have $firstThreeLetters containing the first three letters of the product name
-
-    // Rest of your code...
-}
-
-
-?>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Hope UI | Responsive Bootstrap 5 Admin Dashboard Template</title>
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico" />
-
-        <!-- Library / Plugin Css Build -->
-        <link rel="stylesheet" href="../assets/css/core/libs.min.css" />
-
-        <!-- Hope Ui Design System Css -->
-        <link rel="stylesheet" href="../assets/css/hope-ui.min.css?v=2.0.0" />
-
-        <!-- Custom Css -->
-        <link rel="stylesheet" href="../assets/css/custom.min.css?v=2.0.0" />
-
-        <!-- Dark Css -->
-        <link rel="stylesheet" href="../assets/css/dark.min.css" />
-
-        <!-- Customizer Css -->
-        <link rel="stylesheet" href="../assets/css/customizer.min.css" />
-
-        <!-- RTL Css -->
-        <link rel="stylesheet" href="../assets/css/rtl.min.css" />
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    </head>
-
-    <body>
-        <h1>Upload Product</h1>
-        <form action="addproducts.php" method="POST" enctype="multipart/form-data">
-            <label for="product_name">Product Name:</label>
-            <input type="text" name="product_name" required><br><br>
-
-            <label for="description">Description:</label><br>
-            <textarea name="description" rows="4" required></textarea><br><br>
-
-            <label for="price">Price:</label>
-            <input type="text" name="price" required><br><br>
-
-            <label for="stockquantity">Stock Quantity:</label>
-            <input type="number" name="stockquantity" required><br><br>
-
-            <form id="productForm" method="POST">
-                <label for="categorySelect">Category:</label>
-                <select name="category_id" id="categorySelect" required>
-                    <option value="">Select a category</option>
-                    <!-- Categories will be populated dynamically -->
-                </select>
-
-                <br>
-
-                <label for="subcategorySelect">Subcategory:</label>
-                <select name="subcategory_id" id="subcategorySelect" required>
-                    <option value="">Select a subcategory</option>
-                    <!-- Subcategories will be populated dynamically based on the selected category -->
-                </select>
-
-
-                <label for="subcategorySelect">Brand</label>
-                <select name="brand_id" id="brandselect">
-                    <option value="">Select a Brand</option>
-                </select>
-
-
-
-
-
-
-
-                <br><br>
-
-                <table id="variant-table" class="table">
-                    <tr class="variant-fields">
-                        <td><label class="color">Color:</label></td>
-                        <td><input type="text" name="color" placeholder="Color"></td>
-
-                        <td><label class="size">Size:</label></td>
-                        <td><input type="text" name="size" placeholder="Size"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="material">Material:</label></td>
-                        <td><input type="text" name="material" placeholder="Material"></td>
-
-                        <td><label class="voltage">Voltage:</label></td>
-                        <td><input type="text" name="voltage" placeholder="Voltage"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="wattage">Wattage:</label></td>
-                        <td><input type="text" name="wattage" placeholder="Wattage"></td>
-
-                        <td><label class="plug-type">Plug Type:</label></td>
-                        <td><input type="text" name="plug_type" placeholder="Plug Type"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="weight">Weight (KG):</label></td>
-                        <td><input type="text" name="weight" placeholder="Weight (KG)"></td>
-
-                        <td><label class="dimensions">Dimensions:</label></td>
-                        <td><input type="text" name="dimensions" placeholder="Dimensions"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="os">Operating System:</label></td>
-                        <td><input type="text" name="operating_system" placeholder="Operating System">
-                        </td>
-
-                        <td><label class="strage_capacity">Capacity:</label></td>
-                        <td><input type="text" name="capacity" placeholder="Capacity"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="resolution">Resolution:</label></td>
-                        <td><input type="text" name="resolution" placeholder="Resolution"></td>
-
-                        <td><label class="speed">Speed:</label></td>
-                        <td><input type="text" name="speed" placeholder="Speed"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="style">Style:</label></td>
-                        <td><input type="text" name="style" placeholder="Style"></td>
-
-                        <td><label class="pattern">Pattern:</label></td>
-                        <td><input type="text" name="pattern" placeholder="Pattern"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="sku">SKU:</label></td>
-                        <td><input type="text" name="sku" placeholder="SKU"></td>
-                    </tr>
-                    <tr class="variant-fields">
-                        <td><label class="cpu">CPU:</label></td>
-                        <td><input type="text" name="cpu" placeholder="CPU"></td>
-                    </tr>
-                </table>
-
-                <button onclick="generateSKU()">Generate SKUs</button>
-                <h4>SKU: <span class="sku"></span></h4>
-
-
-
-                <br>
-                <br>
-
-
-
-
-
-                <!-- Product Image Fields -->
-                <label for="product_image1">Main_product_image:</label>
-                <input type="file" name="main_product_image" accept="image/*"><br><br>
-
-                <label for="2nd_product_image">2nd_product_image:</label>
-                <input type="file" name="second_product_image" accept="image/*"><br><br>
-
-                <label for="3rd_product_image">3rd_product_image:</label>
-                <input type="file" name="third_product_image" accept="image/*"><br><br>
-
-
-                <label for="4th_product_image">4th_product_image:</label>
-                <input type="file" name="fourth_product_image" accept="image/*"><br><br>
-
-                <!-- Video Upload Fields -->
-                <label for="Main_product_video">Main_product_video:</label>
-                <input type="file" name="main_product_video" accept="video/*"><br><br>
-
-                <label for="2nd_product_video">2nd_product_video:</label>
-                <input type="file" name="second_product_video" accept="video/*"><br><br>
-
-                <label for="3rd_product_video">3rd_product_video:</label>
-                <input type="file" name="third_product_video" accept="video/*"><br><br>
-
-                <label for="4th_product_video">4th_product_video:</label>
-                <input type="file" name="fourth_product_video" accept="video/*"><br><br>
-
-
-                <input type="submit" value="Upload">
-            </form>
-
-
-
-
-            <script>
-            function generateSKU() {
-                const rows = document.querySelectorAll(".variant-fields");
-
-                rows.forEach((row) => {
-                    const color = row.querySelector("input[name='color']").value || "NOCOLOR";
-                    const size = row.querySelector("input[name='size']").value || "NOSIZE";
-                    const first3 = "<?php echo isset($firstThreeLetters) ? $firstThreeLetters : ''; ?>";
-
-                    // You can add more attributes as needed
-
-                    const SKU = `${first3}-${color}-${size}`; // You can modify the format as needed
-
-                    // Set the generated SKU in the corresponding input field
-                    const skuSpan = row.querySelector(".sku");
-                    skuSpan.textContent = SKU;
-                    console.log(SKU);
-                });
+    if (isset($_POST["add_product"])) {
+        try {
+            // Function to get the file type based on its MIME type
+            function getFileType($file)
+            {
+                if (empty($file) || !file_exists($file)) {
+                    return "Unknown"; // Handle the case where the file is empty or doesn't exist
+                }
+
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $mime = finfo_file($finfo, $file);
+                finfo_close($finfo);
+
+                return $mime;
             }
-            </script>
 
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const categorySelect = document.getElementById('categorySelect');
-                const subcategorySelect = document.getElementById('subcategorySelect');
-                const brandSelect = document.getElementById('brandselect');
+            // Function to determine the upload directory based on the selected subcategory
+            function getUploadDirectory($selectedSubcategoryname)
+            {
+                return "uploads/" . $selectedSubcategoryname . "/";
+            }
 
-                // Function to populate categories from the server
-                function populateCategories() {
-                    // Make an AJAX request to fetch categories
-                    fetch('get_categories.php')
-                        .then(response => response.json())
-                        .then(data => {
-                            // Clear the existing options
-                            categorySelect.innerHTML = '';
-                            subcategorySelect.innerHTML = '';
+            function sanitizeInput($input)
+            {
+                // Trim whitespace and escape HTML characters
+                return trim(htmlspecialchars($input, ENT_QUOTES, 'UTF-8'));
+            }
 
-                            // Add a default "Select a category" option
-                            const defaultCategoryOption = document.createElement('option');
-                            defaultCategoryOption.value = '';
-                            defaultCategoryOption.text = 'Select a category';
-                            categorySelect.appendChild(defaultCategoryOption);
+            // Get the selected subcategory's ID from the hidden input field
+            $selectedSubcategoryname = $_POST["selected_subcategory_name"];
+            echo "Selected Subcategory Name: " . $selectedSubcategoryname;
 
-                            // Add category options
-                            data.categories.forEach(category => {
-                                const option = document.createElement('option');
-                                option.value = category.CategoryID;
-                                option.text = category.CategoryName;
-                                categorySelect.appendChild(option);
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error fetching categories:', error);
-                        });
+            // Define the directory where you want to store the files based on their type
+            $imageUploadDir = getUploadDirectory($selectedSubcategoryname) . "images/";
+            $videoUploadDir = getUploadDirectory($selectedSubcategoryname) . "videos/";
+
+            // Function to handle file uploads and return the file path
+            function uploadFile($inputName, $uploadDir)
+            {
+                if (!isset($_FILES[$inputName])) {
+                    return ""; // Return an empty string if the file doesn't exist
                 }
 
-                // Function to update subcategories based on the selected category
-                function updateSubcategories() {
-                    const selectedCategoryId = categorySelect.value;
+                $target_dir = $uploadDir;
+                $target_file = $target_dir . basename($_FILES[$inputName]["name"]);
+                $fileType = getFileType($_FILES[$inputName]["tmp_name"]);
 
-                    // Make an AJAX request to fetch subcategories for the selected category
-                    fetch('get_subcategories.php?category_id=' + selectedCategoryId)
-                        .then(response => response.json())
-                        .then(data => {
-                            // Clear the existing subcategory options
-                            subcategorySelect.innerHTML = '';
+                // Define allowed file types (you can customize this list)
+                $allowedImageTypes = ["image/jpeg", "image/png", "image/gif"];
+                $allowedVideoTypes = ["video/mp4", "video/mpeg"];
 
-                            // Add a default "Select a subcategory" option
-                            const defaultSubcategoryOption = document.createElement('option');
-                            defaultSubcategoryOption.value = '';
-                            defaultSubcategoryOption.text = 'Select a subcategory';
-                            subcategorySelect.appendChild(defaultSubcategoryOption);
+                // Check the file type and move it to the appropriate directory
+                if (in_array($fileType, $allowedImageTypes) && move_uploaded_file($_FILES[$inputName]["tmp_name"], $target_file)) {
+                    return $target_file; // Return the file path for images
+                } elseif (in_array($fileType, $allowedVideoTypes) && move_uploaded_file($_FILES[$inputName]["tmp_name"], $target_file)) {
+                    return $target_file; // Return the file path for videos
+                } else {
+                    return ""; // Return an empty string if the file type is not allowed
+                }
+            }
 
-                            // Add subcategory options
-                            data.subcategories.forEach(subcategory => {
-                                const option = document.createElement('option');
-                                option.value = subcategory.Sub_category_id;
-                                option.text = subcategory.Sub_category_name;
-                                subcategorySelect.appendChild(option);
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error fetching subcategories:', error);
-                        });
+            // Get and sanitize form inputs
+            $category_id = isset($_POST["category_id"]) ? sanitizeInput($_POST["category_id"]) : "";
+            $subcategory_id = isset($_POST["subcategory_id"]) ? sanitizeInput($_POST["subcategory_id"]) : "";
+            $product_name = isset($_POST["product_name"]) ? sanitizeInput($_POST["product_name"]) : "";
+            $keywords = isset($_POST["keywords"]) ? sanitizeInput($_POST["keywords"]) : "";
+            $slug = isset($_POST["slug"]) ? sanitizeInput($_POST["slug"]) : "";
+            $description = isset($_POST["description"]) ? sanitizeInput($_POST["description"]) : "";
+            $price = isset($_POST["price"]) ? floatval($_POST["price"]) : 0.0;
+            $stockquantity = isset($_POST["quantity"]) ? intval($_POST["quantity"]) : 0;
+            $brand_id = isset($_POST["brand_id"]) ? intval($_POST["brand_id"]) : 0;
+            $min_amount = isset($_POST["min_amount"]) ? intval($_POST["min_amount"]) : 0;
+
+            // Get the uploaded main product image
+            $main_product_image = uploadFile("main_product_image", $imageUploadDir);
+
+            // Define an array to store any potential validation errors
+            $errors = [];
+
+            // You can add validation here, for example, check if required fields are empty or validate specific input types.
+
+            // If there are no validation errors, insert the data into the database
+            if (empty($errors)) {
+                // Create a MySQLi connection
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
                 }
 
+                $sql = "INSERT INTO products 
+            (product_name, description, price, quantity, category_id, 
+            sub_category_id, brand_id, keywords, slug, Main_product_image, min_amount) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-                function updateBrands() {
-                    const selectedCategoryId = categorySelect.value;
+                $stmt = $conn->prepare($sql);
 
-                    // Make an AJAX request to fetch subcategories for the selected category
-                    fetch('get_brands.php?category_id=' + selectedCategoryId)
-                        .then(response => response.json())
-                        .then(data => {
-                            // Clear the existing subcategory options
-                            brandSelect.innerHTML = '';
+                // Bind parameters
+                $stmt->bind_param(
+                    "ssdiiiisssi",
+                    $product_name,
+                    $description,
+                    $price,
+                    $stockquantity,
+                    $category_id,
+                    $subcategory_id,
+                    $brand_id,
+                    $keywords,
+                    $slug,
+                    $main_product_image,
+                    $min_amount
+                );
 
-                            // Add a default "Select a subcategory" option
-                            const defaultBrandOption = document.createElement('option');
-                            defaultBrandOption.value = '';
-                            defaultBrandOption.text = 'Select a brand';
-                            brandSelect.appendChild(defaultBrandOption);
+                // Handle uploaded images and videos separately
+
+                // Execute the statement
+                if ($stmt->execute()) {
+                    echo "Product and files uploaded successfully!";
+                    $lastInsertedProductId = $stmt->insert_id;
+                    $_SESSION['product_data'] = $_POST;
+                    $_SESSION['product_added'] = true;
+                    $_SESSION["product_id"] = $lastInsertedProductId;
+                    $_SESSION["selected_subcategory_name"] =  $selectedSubcategoryname;
 
 
-                            // Add subcategory options
-                            data.brands.forEach(brand => {
-                                const option = document.createElement('option');
-                                option.value = brand.brand_id;
-                                option.text = brand.BrandName;
-                                brandSelect.appendChild(option);
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error fetching brands:', error);
-                        });
+                    header("Location: variatis.php");
+                } else {
+                    echo "Error: " . $conn->error;
                 }
 
-
-                // Event listener for category selection
-                categorySelect.addEventListener('change', updateSubcategories);
-                categorySelect.addEventListener('change', updateBrands);
-                // Populate categories when the page loads
-                populateCategories();
-            });
-            </script>
-
-
-
-
+                // Close the statement and connection
+                $stmt->close();
+                $conn->close();
+            }
+        } catch (Exception $e) {
+            echo "An error occurred: " . $e->getMessage();
+        }
+    } elseif (isset($_POST["save_draft"])) {
+        echo "Draft saved successfully!";
+    }
 
 
 
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                // Function to show or hide variant field groups based on the selected category
-                function updateVariantFields(categoryID) {
-                    const variantFields = document.getElementsByClassName("variant-fields");
+    if (isset($_POST["savechanges"])) {
 
-                    // Hide all variant field groups by default
-                    for (let i = 0; i < variantFields.length; i++) {
-                        variantFields[i].style.display = "none";
-                    }
 
-                    switch (categoryID) {
-                        case "4": // Example category ID
-                            show("cpu");
-                            show("color");
-                            show("size");
-                            show("material");
-                            show("weight");
-                            show("os");
-                            show("storage_capacity"); // Corrected class name
-                            show("resolution");
-                            // Add more cases for other category IDs and corresponding field groups
-                            break;
-                        case "5": // Another category ID
-                            show("speed");
-                            show("pattern");
-                            show("sku");
-                            show("resolution");
-                            show("wattage");
-                            show("cpu");
-                            show("cpu");
-                            show("cpu");
-                            break;
-                        default:
-                            // Handle the default case if needed
-                            break;
-                    }
-                }
+        function sanitizeInput($input)
+        {
+            // Trim whitespace and escape HTML characters
+            return trim(htmlspecialchars($input, ENT_QUOTES, 'UTF-8'));
+        }
 
-                // Function to show elements with a specific class
-                function show(className) {
-                    const elements = document.getElementsByClassName(className);
-                    for (let i = 0; i < elements.length; i++) {
-                        elements[i].closest("tr").style.display = "table-row";
-                    }
-                }
+
+
+        var_dump('got to this point');
+        $product_id = isset($_SESSION["product_id"]) ? intval($_SESSION["product_id"]) : 0;
+
+        // Retrieve existing product data from the database
+        $sql = "SELECT * FROM products WHERE product_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $product_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $product = $result->fetch_assoc();
+        $stmt->close();
+
+        // Check if the product exists
+        if (!$product) {
+            echo "Product not found.";
+            exit;
+        }
+
+        // Get and sanitize form inputs
+        $product_name = isset($_POST["product_name"]) ? sanitizeInput($_POST["product_name"]) : $product["product_name"];
+        $description = isset($_POST["description"]) ? sanitizeInput($_POST["description"]) : $product["description"];
+        $price = isset($_POST["price"]) ? floatval($_POST["price"]) : $product["price"];
+        $quantity = isset($_POST["quantity"]) ? intval($_POST["quantity"]) : $product["quantity"];
+
+        // Handle product image update
+        $new_image = "";
+
+        if (isset($_FILES["Main_product_image"]) && $_FILES["Main_product_image"]["error"] == 0) {
+            // File upload was successful
+            $new_image = uploadFile("main_product_image", $imageUploadDir);
+        } else {
+            // File upload was not attempted or failed; keep the existing image
+            $new_image = $product["Main_product_image"];
+        }
+
+        // Update the product record in the database, including the image
+        $update_sql = "UPDATE products SET product_name=?, description=?, price=?, quantity=?, Main_product_image=? WHERE product_id=?";
+        $update_stmt = $conn->prepare($update_sql);
+        $update_stmt->bind_param("ssdiss", $product_name, $description, $price, $quantity, $new_image, $product_id);
+
+        if ($update_stmt->execute()) {
+            // Product updated successfully; you can redirect or send a response here
+            echo "Product updated successfully!";
+            // Redirect to a confirmation page if needed
+            // header("Location: confirmation.php");
+        } else {
+            echo "Error updating product: " . $conn->error;
+        }
+
+        $update_stmt->close();
+    }
+}

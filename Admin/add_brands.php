@@ -4,20 +4,18 @@ require_once 'con2.php';
 // Check if form data has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve data from the submitted form
-    $categoryName = $_POST["category_name"];
-if($categoryName){
-    echo "<script>aler('js')</script>";
-}
+    $brandName = $_POST["data"]; // Access the "data" field sent from JavaScript
+    $catyeryID = $_POST["mainCategoryID"];
+
     // Define the INSERT statement
-    $insertQuery = "INSERT INTO categories (CategoryName)
-                    VALUES (?)";
+    $insertQuery = "INSERT INTO brands (brand_name, CategoryID ) VALUES (?, ?)";
 
     // Prepare the statement
     $stmt = mysqli_prepare($conn, $insertQuery);
 
     if ($stmt) {
         // Bind the parameter
-        mysqli_stmt_bind_param($stmt, "s", $categoryName);
+        mysqli_stmt_bind_param($stmt, "si", $brandName,  $catyeryID);
 
         // Execute the statement
         $success = mysqli_stmt_execute($stmt);
@@ -26,9 +24,9 @@ if($categoryName){
         $response = [];
 
         if ($success) {
-            $response['success'] = 'Category added successfully';
+            $response['success'] = 'sub Category added successfully';
         } else {
-            $response['error'] = 'Category addition failed: ' . mysqli_error($conn);
+            $response['error'] = 'sub Category addition failed: ' . mysqli_error($conn);
         }
 
         // Set the content type to JSON
@@ -47,9 +45,4 @@ if($categoryName){
 }
 
 mysqli_close($conn);
-
-// Enable error reporting and display errors in the browser for debugging
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 ?>

@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    function populatesize() {
-    console.log('Fetching size...'); // Debugging
-    // Get a reference to the sizeSelect dropdown
-    const sizeSelect = document.getElementById('sizeSelect');
+    function populategeneration() {
+    console.log('Fetching generation...'); // Debugging
+    // Get a reference to the generationSelect dropdown
+    const generationSelect = document.getElementById('generationSelect');
     
-    // Make an AJAX request to fetch size from 'get_size.php'
-    fetch('get_size.php')
+    // Make an AJAX request to fetch generation from 'get_generation.php'
+    fetch('get_generation.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -14,23 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log('size fetched:', data); // Debugging
+            console.log('generation fetched:', data); // Debugging
             // Clear existing options
-            sizeSelect.innerHTML = '';
+            generationSelect.innerHTML = '';
     
-            // Add a default "Select a size" option
-            const defaultsizeOption = new Option('Select a size', '');
-            sizeSelect.appendChild(defaultsizeOption);
+            // Add a default "Select a generation" option
+            const defaultgenerationOption = new Option('Select a generation', '');
+            generationSelect.appendChild(defaultgenerationOption);
     
-            // Add size options obtained from the fetched data
-            data.sizes.forEach(size => {
-                const option = new Option(size.value_name, size.size_id);
-                sizeSelect.appendChild(option);
+            // Add generation options obtained from the fetched data
+            data.generations.forEach(generation => {
+                const option = new Option(generation.value_name, generation.generation_id);
+                generationSelect.appendChild(option);
             });
         })
        
     }
     
     
-    populatesize();
+    populategeneration();
     });

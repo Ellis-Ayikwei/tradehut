@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Trim leading and trailing spaces
     $items = trim($items);
 
-    echo $items;
+    // echo $items;
 
     // Insert the items into the database
     $query = "INSERT INTO varrr (value) VALUES ('$items')"; // Replace 'your_table' and 'your_column' with your table and column names
